@@ -100,6 +100,10 @@ const arreyOfQuestions = [
 //prendere html
 const timerH2 = document.querySelector(" h2");
 const h3 = document.querySelector(" .h3 h3");
+const button1 = document.querySelector(".btn1");
+const button2 = document.querySelector(".btn2");
+const button3 = document.querySelector(".btn3");
+const button4 = document.querySelector(".btn4");
 
 //contatore
 const timerCounter = function () {
@@ -109,11 +113,26 @@ const timerCounter = function () {
     count++;
     timerH2.innerHTML = count;
     //cambio domande
-    if (count === 6) {
+    if (count === 3) {
       //mettere 60s
       i++;
-      h3.innerHTML = arreyOfQuestions[i].question;
       count = 0;
+      h3.innerHTML = arreyOfQuestions[i].question;
+      if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
+        button2.classList.remove("hidden");
+        button3.classList.remove("hidden");
+        
+        button1.innerHTML = arreyOfQuestions[i ].incorrect_answers[0];
+        button2.innerHTML = arreyOfQuestions[i ].incorrect_answers[1];
+        button3.innerHTML = arreyOfQuestions[i ].incorrect_answers[2];
+        button4.innerHTML = arreyOfQuestions[i ].correct_answer;
+        console.log(i);
+      } else {
+        console.log("ciao");
+        button2.classList.add("hidden");
+        button3.classList.add("hidden");
+      }
+
       //interruzione ciclo
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
@@ -127,43 +146,31 @@ const timerCounter = function () {
 window.onload = timerCounter();
 
 //risposte
-const main = document.querySelector("main");
-const startBtn = () => {
-  const button = document.createElement("button");
-  button.className = "btn";
-  button.innerHTML = arreyOfQuestions[0].incorrect_answers[0];
-  const section = document.createElement("section");
-  section.appendChild(button);
-  section.className = "button";
-  main.appendChild(section);
 
-  //   for (let i = 0; i < arreyOfQuestions.length; i++) {
-  //    const obj= arreyOfQuestions[i]
-  //     for (let j = 0; j < 1; j++) {
-  //         console.log("ciao")
-  //         // if(obj.incorrect_answers.length===3){
-  //         // //     console.log(obj)
-  //         // //     const button=document.createElement("button")
-  //         // //     button.className="btn"
-  //         // //     button.innerHTML=obj.incorrect_answers[j]
-  //         // //     const section=document.createElement("section")
-  //         // //     section.appendChild(button)
-  //         // //     section.className="button"
-  //         // //    main.appendChild(section)
-
-  //         // }
-
-  //     }}
-
-  // question.incorrect_answers.forEach((answer) => {
-  //     // console.log(answer)
-  // });
-};
-startBtn();
- let IndexOfIncorrectAnswer = () => {
-  arreyOfQuestions.forEach((question) => {
-   console.log(question.incorrect_answers.length);
-    
-  });
-};
-console.log(IndexOfIncorrectAnswer());
+// const startBtn = () => {
+//   //   for (let i = 0; i < arreyOfQuestions.length; i++) {
+//   //    const obj= arreyOfQuestions[i]
+//   //     for (let j = 0; j < 1; j++) {
+//   //         console.log("ciao")
+//   //         // if(obj.incorrect_answers.length===3){
+//   //         // //     console.log(obj)
+//   //         // //     const button=document.createElement("button")
+//   //         // //     button.className="btn"
+//   //         // //     button.innerHTML=obj.incorrect_answers[j]
+//   //         // //     const section=document.createElement("section")
+//   //         // //     section.appendChild(button)
+//   //         // //     section.className="button"
+//   //         // //    main.appendChild(section)
+//   //         // }
+//   //     }}
+//   // question.incorrect_answers.forEach((answer) => {
+//   //     // console.log(answer)
+//   // });
+// };
+// startBtn();
+// let IndexOfIncorrectAnswer = () => {
+//   arreyOfQuestions.forEach((question) => {
+//     console.log(question.incorrect_answers.length);
+//   });
+// };
+// console.log(IndexOfIncorrectAnswer());
