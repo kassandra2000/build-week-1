@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+  padding: 0 0.3rem;
+}
+
+.background {
+  background-image: url(../image/bg.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-container {
+  margin-inline: auto;
+  max-width: 90%;
+  min-width: 50%;
+}
+
+main {
+  text-align: center;
+}
+
+.logo img {
+  text-align: left;
+  width: 250px;
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  padding: 4rem 0 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.stars {
+  padding: 3rem 0 6rem;
+  cursor: pointer;
+}
+
+.star {
+  fill: #141c52;
+  /*stroke: white;
+  stroke-width: 0.5;*/
+}
+
+.selectedStar {
+  fill: #01feff;
+}
+
+.star:hover {
+  fill: #01feff;
+}
+
+input,
+button {
+  font-family: 'Inter', sans-serif;
+}
+
+.write-comment {
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-bottom: 3px solid #b41288;
+  max-width: 60%;
+  min-width: 50%;
+  margin: 2rem 0 4rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  box-shadow: 0 0 20px #b41288;
+}
+
+.button {
+  padding: 1rem 3rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #01feff;
+  box-shadow: 0 0 30px #01feff;
+}
