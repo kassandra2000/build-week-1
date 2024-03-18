@@ -121,11 +121,11 @@ const timerCounter = function () {
       if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
         button2.classList.remove("hidden");
         button3.classList.remove("hidden");
-        
-        button1.innerHTML = arreyOfQuestions[i ].incorrect_answers[0];
-        button2.innerHTML = arreyOfQuestions[i ].incorrect_answers[1];
-        button3.innerHTML = arreyOfQuestions[i ].incorrect_answers[2];
-        button4.innerHTML = arreyOfQuestions[i ].correct_answer;
+
+        button1.innerHTML = arreyOfQuestions[i].incorrect_answers[0];
+        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1];
+        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2];
+        button4.innerHTML = arreyOfQuestions[i].correct_answer;
         console.log(i);
       } else {
         console.log("ciao");
@@ -144,33 +144,3 @@ const timerCounter = function () {
   return count;
 };
 window.onload = timerCounter();
-
-//risposte
-
-// const startBtn = () => {
-//   //   for (let i = 0; i < arreyOfQuestions.length; i++) {
-//   //    const obj= arreyOfQuestions[i]
-//   //     for (let j = 0; j < 1; j++) {
-//   //         console.log("ciao")
-//   //         // if(obj.incorrect_answers.length===3){
-//   //         // //     console.log(obj)
-//   //         // //     const button=document.createElement("button")
-//   //         // //     button.className="btn"
-//   //         // //     button.innerHTML=obj.incorrect_answers[j]
-//   //         // //     const section=document.createElement("section")
-//   //         // //     section.appendChild(button)
-//   //         // //     section.className="button"
-//   //         // //    main.appendChild(section)
-//   //         // }
-//   //     }}
-//   // question.incorrect_answers.forEach((answer) => {
-//   //     // console.log(answer)
-//   // });
-// };
-// startBtn();
-// let IndexOfIncorrectAnswer = () => {
-//   arreyOfQuestions.forEach((question) => {
-//     console.log(question.incorrect_answers.length);
-//   });
-// };
-// console.log(IndexOfIncorrectAnswer());
