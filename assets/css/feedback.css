@@ -61,11 +61,11 @@ h3 {
 
 .stars {
   padding: 3rem 0 6rem;
-  cursor: pointer;
 }
 
 .star {
   fill: #141c52;
+  cursor: pointer;
 }
 
 .selectedStar {
