@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap");
+
+body {
+  background-image: url(../assets/image/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#container {
+  width: 80%;
+  height: 100vh;
+  margin-inline: auto;
+}
+#logoContainer {
+  margin: 5% 0 0 0;
+}
+#logoContainer img {
+  width: 20%;
+}
+
+#resultsTitle {
+  text-align: center;
+  color: white;
+  font-family: "Outfit", sans-serif;
+}
+#resultsTitle h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+#resultsTitle h2 {
+  font-size: 2em;
+}
+.correctWrongContainer {
+  display: inline-block;
+  margin: 10% 0 0 0;
+  width: 33%;
+  height: 200px;
+  color: white;
+}
+
+#correct h1 {
+  font-size: 3.5em;
+  font-family: "Outfit", sans-serif;
+  margin-top: 2%;
+}
+#correct h2 {
+  font-size: 3.5em;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  margin-top: 2%;
+}
+
+#correct p {
+  font-family: "Inter", sans-serif;
+  margin-top: 2%;
+  font-weight: 100;
+}
+#congratulations {
+  text-align: center;
+  padding: 20%;
+}
+#congratulations h1 {
+  font-size: 1.5em;
+  margin-bottom: 2%;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+#congratulations h2 {
+  font-size: 1em;
+  color: #00ffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  margin-bottom: 10%;
+}
+#congratulations p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9em;
+  font-weight: 300;
+  color: lightgray;
+  line-height: 1.3em;
+}
+#wrong {
+  text-align: right;
+  color: lightgrey;
+}
+#wrong h1 {
+  font-size: 3.5em;
+  font-family: "Outfit", sans-serif;
+  margin-top: 2%;
+}
+#wrong h2 {
+  font-size: 3.5em;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  margin-top: 2%;
+}
+#wrong p {
+  font-family: "Inter", sans-serif;
+  margin-top: 2%;
+  font-weight: 100;
+}
+
+#rateUsContainer {
+  width: 20%;
+  margin-inline: auto;
+  padding: 1%;
+  border: 2px white solid;
+  color: white;
+  margin-bottom: 20%;
+  margin-top: 7%;
+}
+
+#rateUsContainer p {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 2em;
+}
