@@ -7,18 +7,9 @@
 
 body {
   color: white;
-  font-family: 'Outfit', sans-serif;
-  user-select: none;
   min-height: 100vh;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  display: inline;
-  padding: 0 0.3rem;
+  font-family: 'Inter', sans-serif;
+  user-select: none;
 }
 
 .background {
@@ -37,8 +28,10 @@ li {
   min-width: 50%;
 }
 
-main {
-  text-align: center;
+main,
+.bottom-container {
+  margin-inline: auto;
+  max-width: 60%;
 }
 
 .logo img {
@@ -49,54 +42,74 @@ main {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 6rem;
+  font-weight: 400;
+  padding: 3rem 0 2.5rem;
+}
+h1 span {
   font-weight: 600;
-  padding: 4rem 0 3rem;
 }
 
-h3 {
+h4 {
   font-size: 2rem;
+  color: #b41288;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 200;
+  padding: 0 6rem 0 0;
+}
+
+ul {
+  margin: 3.5rem 2rem;
+}
+ul span {
+  font-weight: 600;
+}
+li {
+  padding: 0.5rem;
   font-weight: 200;
 }
 
-.stars {
-  padding: 3rem 0 6rem;
-  cursor: pointer;
+.bottom-container {
+  padding: 1.5rem 0;
 }
 
-.star {
-  fill: #141c52;
+.bottom-container > div {
+  display: inline;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.selectedStar {
-  fill: #01feff;
-}
+.check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  user-select: none;
 
-.star:hover {
-  stroke: #01feff;
-  stroke-width: 1;
-}
-
-input,
-button {
-  font-family: 'Inter', sans-serif;
-}
-
-.write-comment {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
   background-color: transparent;
-  border: 3px solid transparent;
-  border-bottom: 3px solid #b41288;
-  width: 60%;
-  margin: 2rem 0 4rem;
-  padding: 0.5rem 1.5rem;
-  font-size: 1.2rem;
-  color: white;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
-textarea:focus,
-input:focus {
+.check:checked {
+  background-color: #b41288;
+}
+
+.check:focus {
   outline: none;
-  box-shadow: 0 0 10px #b41288;
+}
+
+.proceed {
+  margin-left: 20%;
 }
 
 .button {
