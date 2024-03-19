@@ -104,6 +104,15 @@ input:focus {
   padding-bottom: 4rem;
 }
 
+.info a {
+  text-decoration: none;
+  color: black;
+}
+.info a:visited {
+  text-decoration: none;
+  color: black;
+}
+
 .button {
   padding: 1rem 3rem;
   font-weight: 700;
