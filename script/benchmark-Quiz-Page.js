@@ -104,69 +104,124 @@ const button1 = document.querySelector(".btn1");
 const button2 = document.querySelector(".btn2");
 const button3 = document.querySelector(".btn3");
 const button4 = document.querySelector(".btn4");
-const section1 = document.querySelector(".button");
-const section2 = document.querySelector(".button2");
+const p = document.querySelector("footer p");
+const borderTimer = document.querySelector(".border-timer");
+//punteggio risposte corette
+const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//randomizzare bottoni
+const changeArr = [".change1", "Nan", ".change2"];
 
+const section1 = document.querySelector(".sect1");
+const section2 = document.querySelector(".sect2");
+
+// console.log(section1.classList.item(section1.classList.length - 1));
 //contatore
 const timerCounter = function () {
-  let count = 0;
+  let counterTimerColor = 0;
+  let count = 60;
   let i = 0;
+  //risposte esatte
+  let totalResult = 0;
   const interval = setInterval(function () {
-    count++;
+    counterTimerColor += 1.69;
+    count--;
     timerH2.innerHTML = count;
+    borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`;
+
+    if (counterTimerColor === 101.39999999999992) {
+      counterTimerColor = 1;
+    }
     button1.onclick = function () {
-      console.log(this.innerHTML);
-      count = 22;
-    };
-    button2.onclick = function () {
-      console.log(this.innerHTML);
-      count = 22;
-    };
-    button3.onclick = function () {
-      console.log(this.innerHTML);
-      count = 22;
-    };
-    button4.onclick = function () {
-     
-      console.log(this.innerHTML);
-      count = 22;
-      button4.classList.add("selected")
-      // button4.classList.remove("selected")
-
-      setInterval(function () {button4.classList.remove("selected")}, 1500);
-       
-    };
-
-    //cambio domande
-    if (count === 23) {
-      //mettere 60s
-      i++;
-      count = 0;
-      h3.innerHTML = arreyOfQuestions[i].question;
-      if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
-        // const randomNumber = Math.floor(Math.random() * 3);
-        button2.classList.remove("hidden");
-        button3.classList.remove("hidden");
-
-        button1.innerHTML = arreyOfQuestions[i].incorrect_answers[0];
-        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1];
-        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2];
-        button4.innerHTML = arreyOfQuestions[i].correct_answer;
-        // console.log(i);
-      } else {
-        console.log("ciao");
-        button2.classList.add("hidden");
-        button3.classList.add("hidden");
-      }
-
-      //interruzione ciclo
+      count = 1;
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
       }
+      counterTimerColor = 0;
+    };
+    button2.onclick = function () {
+      count = 1;
+      if (i === arreyOfQuestions.length - 1) {
+        clearInterval(interval);
+        window.location.href = "./Result.html";
+      }
+      counterTimerColor = 0;
+    };
+    button3.onclick = function () {
+      count = 1;
+      if (i === arreyOfQuestions.length - 1) {
+        clearInterval(interval);
+        window.location.href = "./Result.html";
+      }
+      counterTimerColor = 0;
+    };
+    button4.onclick = function () {
+      counterTimerColor = 0;
+      count = 1;
+      button4.classList.add("selected");
+      setInterval(function () {
+        button4.classList.remove("selected");
+      }, 1500);
+      //risultato incrementato ad ogni click della risposta esatta
+      totalResult += 1;
+      if (i === arreyOfQuestions.length - 1) {
+        console.log("ciao");
+        clearInterval(interval);
+        window.location.href = "./Result.html";
+      }
+    };
+    
+    // console.log(totalResult);
+    //cambio domande
+    if (count === 0) {
+      const randomNumber = Math.floor(Math.random() * 3);
+      console.log(randomNumber);
+
+      i++;
+      count = 60;
+      h3.innerHTML = arreyOfQuestions[i].question;
+      if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
+        button2.classList.remove("hidden");
+        button3.classList.remove("hidden");
+        button1.innerHTML = arreyOfQuestions[i].incorrect_answers[0];
+        section1.classList.remove(
+          section1.classList.item(section1.classList.length - 1) //cambio section
+        );
+        section2.classList.remove(
+          section2.classList.item(section2.classList.length - 1) //cambio section
+        );
+        section1.classList.add(changeArr[randomNumber]);
+        section2.classList.add(changeArr[randomNumber]);
+        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1];
+        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2];
+        button4.innerHTML = arreyOfQuestions[i].correct_answer;
+
+        // console.log(i);
+        p.innerHTML = `question ${i + 1} <span>/10</span>`;
+      } else {
+        button2.classList.add("hidden");
+        button3.classList.add("hidden");
+        p.innerHTML = `question ${i + 1} <span>/10</span>`;
+      }
+
+      // interruzione ciclo
+      if (i === arreyOfQuestions.length - 1) {
+        setInterval(function () {
+          clearInterval(interval);
+          window.location.href = "./Result.html";
+        }, 59500);
+      }
     }
+    // console.log(
+    //   "le risposte esatte sono il  " +
+    //     (totalResult / arreyOfQuestions.length) * 100 +
+    //     "%"
+    // ); //percentuale risposte
   }, 1000);
 
   return count;
 };
+
 window.onload = timerCounter();
+
+//calcolare percentuale risposte
