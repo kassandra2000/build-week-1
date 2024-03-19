@@ -61,6 +61,7 @@ h3 {
 
 .stars {
   padding: 3rem 0 6rem;
+  user-select: none;
 }
 
 .star {
@@ -86,7 +87,7 @@ button {
   background-color: transparent;
   border: 3px solid transparent;
   border-bottom: 3px solid #b41288;
-  width: 60%;
+  width: 50%;
   margin: 2rem 0 4rem;
   padding: 0.5rem 1.5rem;
   font-size: 1.2rem;
@@ -96,7 +97,7 @@ button {
 textarea:focus,
 input:focus {
   outline: none;
-  box-shadow: 0 0 10px #b41288;
+  /*box-shadow: 0 0 10px #b41288;*/
 }
 
 .info {
@@ -114,4 +115,31 @@ input:focus {
 .button:hover {
   background-color: #01feff;
   box-shadow: 0 0 30px #01feff;
+}
+
+#submit-comment {
+  font-family: 'Inter', sans-serif;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 1rem;
+  border: 1px solid #efeeef;
+  background-color: #efeeef45;
+  color: #efeeef;
+}
+
+#submit-comment:hover {
+  border: 1px solid transparent;
+  background-color: #efeeef;
+  color: black;
+}
+
+#submit-comment {
+  display: none;
+}
+
+.write-comment:valid + #submit-comment {
+  display: inline;
 }
