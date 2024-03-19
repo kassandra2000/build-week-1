@@ -104,6 +104,8 @@ const button1 = document.querySelector(".btn1");
 const button2 = document.querySelector(".btn2");
 const button3 = document.querySelector(".btn3");
 const button4 = document.querySelector(".btn4");
+const section1 = document.querySelector(".button");
+const section2 = document.querySelector(".button2");
 
 //contatore
 const timerCounter = function () {
@@ -112,13 +114,37 @@ const timerCounter = function () {
   const interval = setInterval(function () {
     count++;
     timerH2.innerHTML = count;
+    button1.onclick = function () {
+      console.log(this.innerHTML);
+      count = 22;
+    };
+    button2.onclick = function () {
+      console.log(this.innerHTML);
+      count = 22;
+    };
+    button3.onclick = function () {
+      console.log(this.innerHTML);
+      count = 22;
+    };
+    button4.onclick = function () {
+     
+      console.log(this.innerHTML);
+      count = 22;
+      button4.classList.add("selected")
+      // button4.classList.remove("selected")
+
+      setInterval(function () {button4.classList.remove("selected")}, 1500);
+       
+    };
+
     //cambio domande
-    if (count === 3) {
+    if (count === 23) {
       //mettere 60s
       i++;
       count = 0;
       h3.innerHTML = arreyOfQuestions[i].question;
       if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
+        // const randomNumber = Math.floor(Math.random() * 3);
         button2.classList.remove("hidden");
         button3.classList.remove("hidden");
 
@@ -126,7 +152,7 @@ const timerCounter = function () {
         button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1];
         button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2];
         button4.innerHTML = arreyOfQuestions[i].correct_answer;
-        console.log(i);
+        // console.log(i);
       } else {
         console.log("ciao");
         button2.classList.add("hidden");
@@ -136,7 +162,7 @@ const timerCounter = function () {
       //interruzione ciclo
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
-        timerH2.innerHTML = 0;
+        window.location.href = "./Result.html";
       }
     }
   }, 1000);
