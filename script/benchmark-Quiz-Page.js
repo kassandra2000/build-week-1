@@ -98,26 +98,24 @@ const arreyOfQuestions = [
 ]
 
 //prendere html
-const timerH2 = document.querySelector(" h2");
-const h3 = document.querySelector(" .h3 h3");
-const button1 = document.querySelector(".btn1");
-const button2 = document.querySelector(".btn2");
-const button3 = document.querySelector(".btn3");
-const button4 = document.querySelector(".btn4");
-const p = document.querySelector("footer p");
-const borderTimer = document.querySelector(".border-timer");
-const pCorrect = document.querySelector(".correct");
-const pWrong = document.querySelector(".wrong");
+const timerH2 = document.querySelector(" h2")
+const h3 = document.querySelector(" .h3 h3")
+const button1 = document.querySelector(".btn1")
+const button2 = document.querySelector(".btn2")
+const button3 = document.querySelector(".btn3")
+const button4 = document.querySelector(".btn4")
+const p = document.querySelector("footer p")
+const borderTimer = document.querySelector(".border-timer")
+const pCorrect = document.querySelector(".correct")
+const pWrong = document.querySelector(".wrong")
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //randomizzare bottoni
-const changeArr = ["change1", "Nan", "change2"];
-
-const section1 = document.querySelector(".sect1");
-const section2 = document.querySelector(".sect2");
+const changeArr = ["change1", "Nan", "change2"]
 
 const section1 = document.querySelector(".sect1")
 const section2 = document.querySelector(".sect2")
+
 let totalResult = 0
 const lengthArray = arreyOfQuestions.length
 console.log(lengthArray)
@@ -145,18 +143,18 @@ const timerCounter = function () {
         console.log(totalResult)
       }
 
-      button1.classList.add("selected");
-      pWrong.style.display = "block";
+      button1.classList.add("selected")
+      pWrong.style.display = "block"
       setTimeout(() => {
-        pWrong.style.display = "none";
-      }, 600);
-      count = 1;
+        pWrong.style.display = "none"
+      }, 600)
+      count = 1
       setInterval(function () {
-        button1.classList.remove("selected");
-      }, 300);
+        button1.classList.remove("selected")
+      }, 300)
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval);
-        window.location.href = "./Result.html";
+        clearInterval(interval)
+        window.location.href = "./Result.html"
       }
       counterTimerColor = 0
     }
@@ -166,18 +164,18 @@ const timerCounter = function () {
         totalResult++
         console.log(totalResult)
       }
-      button2.classList.add("selected");
-      pWrong.style.display = "block";
+      button2.classList.add("selected")
+      pWrong.style.display = "block"
       setTimeout(() => {
-        pWrong.style.display = "none";
-      }, 600);
-      count = 1;
+        pWrong.style.display = "none"
+      }, 600)
+      count = 1
       setInterval(function () {
-        button2.classList.remove("selected");
-      }, 300);
+        button2.classList.remove("selected")
+      }, 300)
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval);
-        window.location.href = "./Result.html";
+        clearInterval(interval)
+        window.location.href = "./Result.html"
       }
       counterTimerColor = 0
     }
@@ -187,18 +185,18 @@ const timerCounter = function () {
         totalResult++
         console.log(totalResult)
       }
-      button3.classList.add("selected");
-      pWrong.style.display = "block";
+      button3.classList.add("selected")
+      pWrong.style.display = "block"
       setTimeout(() => {
-        pWrong.style.display = "none";
-      }, 600);
-      count = 1;
+        pWrong.style.display = "none"
+      }, 600)
+      count = 1
       setInterval(function () {
-        button3.classList.remove("selected");
-      }, 300);
+        button3.classList.remove("selected")
+      }, 300)
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval);
-        window.location.href = "./Result.html";
+        clearInterval(interval)
+        window.location.href = "./Result.html"
       }
       counterTimerColor = 0
     }
@@ -218,33 +216,33 @@ const timerCounter = function () {
         clearInterval(interval)
         window.location.href = "./Result.html"
       }
-    }
-      counterTimerColor = 0;
 
-      button4.classList.add("selected");
-      pCorrect.style.display = "block";
+      counterTimerColor = 0
+
+      button4.classList.add("selected")
+      pCorrect.style.display = "block"
       setTimeout(() => {
-        pCorrect.style.display = "none";
-      }, 600);
-      count = 1;
+        pCorrect.style.display = "none"
+      }, 600)
+      count = 1
       setInterval(function () {
-        button4.classList.remove("selected");
-      }, 300);
+        button4.classList.remove("selected")
+      }, 300)
       //risultato incrementato ad ogni click della risposta esatta
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval);
-        window.location.href = "./Result.html";
+        clearInterval(interval)
+        window.location.href = "./Result.html"
       }
-    };
+    }
 
     // console.log(totalResult);
     //cambio domande
     if (count === 0) {
-      const randomNumber = Math.floor(Math.random() * 3);
-      const randomNumber2 = Math.floor(Math.random() * 3);
-      i++;
-      count = 60;
-      h3.innerHTML = arreyOfQuestions[i].question;
+      const randomNumber = Math.floor(Math.random() * 3)
+      const randomNumber2 = Math.floor(Math.random() * 3)
+      i++
+      count = 60
+      h3.innerHTML = arreyOfQuestions[i].question
       if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
         button2.classList.remove("hidden")
         button3.classList.remove("hidden")
@@ -254,13 +252,13 @@ const timerCounter = function () {
         )
         section2.classList.remove(
           section2.classList.item(section2.classList.length - 1) //cambio section
-        );
+        )
 
-        section1.classList.add(changeArr[randomNumber]);
-        section2.classList.add(changeArr[randomNumber2]);
-        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1];
-        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2];
-        button4.innerHTML = arreyOfQuestions[i].correct_answer;
+        section1.classList.add(changeArr[randomNumber])
+        section2.classList.add(changeArr[randomNumber2])
+        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1]
+        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2]
+        button4.innerHTML = arreyOfQuestions[i].correct_answer
 
         // console.log(i);
         p.innerHTML = `question ${i + 1} <span>/10</span>`
