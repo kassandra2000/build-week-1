@@ -109,7 +109,7 @@ const borderTimer = document.querySelector(".border-timer");
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //randomizzare bottoni
-const changeArr = [".change1", "Nan", ".change2"];
+const changeArr = ["change1", "Nan", "change2"];
 
 const section1 = document.querySelector(".sect1");
 const section2 = document.querySelector(".sect2");
@@ -133,6 +133,10 @@ const timerCounter = function () {
     }
     button1.onclick = function () {
       count = 1;
+      button1.classList.add("selected");
+      setInterval(function () {
+        button1.classList.remove("selected");
+      }, 300);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
@@ -141,6 +145,10 @@ const timerCounter = function () {
     };
     button2.onclick = function () {
       count = 1;
+      button2.classList.add("selected");
+      setInterval(function () {
+        button2.classList.remove("selected");
+      }, 300);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
@@ -149,6 +157,10 @@ const timerCounter = function () {
     };
     button3.onclick = function () {
       count = 1;
+      button3.classList.add("selected");
+      setInterval(function () {
+        button3.classList.remove("selected");
+      }, 300);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
@@ -161,7 +173,7 @@ const timerCounter = function () {
       button4.classList.add("selected");
       setInterval(function () {
         button4.classList.remove("selected");
-      }, 1500);
+      }, 300);
       //risultato incrementato ad ogni click della risposta esatta
       totalResult += 1;
       if (i === arreyOfQuestions.length - 1) {
@@ -170,13 +182,12 @@ const timerCounter = function () {
         window.location.href = "./Result.html";
       }
     };
-    
+
     // console.log(totalResult);
     //cambio domande
     if (count === 0) {
       const randomNumber = Math.floor(Math.random() * 3);
-      console.log(randomNumber);
-
+      const randomNumber2 = Math.floor(Math.random() * 3);
       i++;
       count = 60;
       h3.innerHTML = arreyOfQuestions[i].question;
@@ -190,8 +201,9 @@ const timerCounter = function () {
         section2.classList.remove(
           section2.classList.item(section2.classList.length - 1) //cambio section
         );
+
         section1.classList.add(changeArr[randomNumber]);
-        section2.classList.add(changeArr[randomNumber]);
+        section2.classList.add(changeArr[randomNumber2]);
         button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1];
         button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2];
         button4.innerHTML = arreyOfQuestions[i].correct_answer;
@@ -212,16 +224,20 @@ const timerCounter = function () {
         }, 59500);
       }
     }
+
     // console.log(
     //   "le risposte esatte sono il  " +
     //     (totalResult / arreyOfQuestions.length) * 100 +
     //     "%"
-    // ); //percentuale risposte
+    // );
+
+    //calcolare percentuale risposte
+    const totalCorrectAnswer = (totalResult / arreyOfQuestions.length) * 100; //percentuale risposte correte
+    const wrongAnswer = arreyOfQuestions.length-totalResult
+    const totalWrongAnswer = (wrongAnswer / arreyOfQuestions.length) * 100; //percentuale risposte sbagliate
   }, 1000);
 
   return count;
 };
 
 window.onload = timerCounter();
-
-//calcolare percentuale risposte
