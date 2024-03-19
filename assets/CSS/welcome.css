@@ -33,6 +33,9 @@ main,
   margin-inline: auto;
   max-width: 60%;
 }
+section.bottom-container{
+  max-width: 80%;
+}
 
 .logo img {
   text-align: left;
@@ -45,7 +48,7 @@ h1 {
   font-family: "Outfit", sans-serif;
   font-size: 6rem;
   font-weight: 400;
-  padding: 3rem 0 2.5rem;
+  padding: 0 0 2.5rem;
 }
 h1 span {
   font-weight: 600;
@@ -118,6 +121,7 @@ li {
   border: 1px solid transparent;
   font-size: 1.3rem;
   cursor: pointer;
+  margin-top: 30px;
   margin-bottom: 4rem;
 }
 
