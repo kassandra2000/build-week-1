@@ -61,16 +61,17 @@ header {
 }
 
 /*main*/
+.h3{
+  display: flex;
+  justify-content: center;
+}
 main h3 {
   color: white;
   text-align: center;
   font-size: 2.5em;
   margin: 15px 0 50px 0;
 }
-main h3 span {
-  display: block;
-  font-weight: bold;
-}
+
 
 main button {
   font-family: "Outfit", "Inter", sans-serif;
@@ -102,8 +103,11 @@ footer p {
   text-transform: uppercase;
   color: white;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 45px;
 }
 footer p span {
   color: rgb(226, 43, 211);
+}
+.hidden{
+  display: none;
 }
