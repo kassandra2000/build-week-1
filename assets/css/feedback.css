@@ -9,6 +9,7 @@ body {
   color: white;
   font-family: 'Outfit', sans-serif;
   user-select: none;
+  min-height: 100vh;
 }
 
 ul {
@@ -21,11 +22,13 @@ li {
 }
 
 .background {
-  background-image: url(../image/bg.jpg);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  background-image: url(../image/bg.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .main-container {
@@ -46,7 +49,7 @@ main {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 600;
   padding: 4rem 0 3rem;
 }
@@ -58,13 +61,12 @@ h3 {
 
 .stars {
   padding: 3rem 0 6rem;
-  cursor: pointer;
+  user-select: none;
 }
 
 .star {
   fill: #141c52;
-  /*stroke: white;
-  stroke-width: 0.5;*/
+  cursor: pointer;
 }
 
 .selectedStar {
@@ -72,7 +74,8 @@ h3 {
 }
 
 .star:hover {
-  fill: #01feff;
+  stroke: #01feff;
+  stroke-width: 1;
 }
 
 input,
@@ -84,8 +87,7 @@ button {
   background-color: transparent;
   border: 3px solid transparent;
   border-bottom: 3px solid #b41288;
-  max-width: 60%;
-  min-width: 50%;
+  width: 50%;
   margin: 2rem 0 4rem;
   padding: 0.5rem 1.5rem;
   font-size: 1.2rem;
@@ -95,7 +97,11 @@ button {
 textarea:focus,
 input:focus {
   outline: none;
-  box-shadow: 0 0 20px #b41288;
+  /*box-shadow: 0 0 10px #b41288;*/
+}
+
+.info {
+  padding-bottom: 4rem;
 }
 
 .button {
@@ -109,4 +115,31 @@ input:focus {
 .button:hover {
   background-color: #01feff;
   box-shadow: 0 0 30px #01feff;
+}
+
+#submit-comment {
+  font-family: 'Inter', sans-serif;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 1rem;
+  border: 1px solid #efeeef;
+  background-color: #efeeef45;
+  color: #efeeef;
+}
+
+#submit-comment:hover {
+  border: 1px solid transparent;
+  background-color: #efeeef;
+  color: black;
+}
+
+#submit-comment {
+  display: none;
+}
+
+.write-comment:valid + #submit-comment {
+  display: inline;
 }

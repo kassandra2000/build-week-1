@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+}
+
+.background {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../image/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-container {
+  margin-inline: auto;
+  max-width: 90%;
+  min-width: 50%;
+}
+
+main,
+.bottom-container {
+  margin-inline: auto;
+  max-width: 60%;
+}
+
+.logo img {
+  text-align: left;
+  width: 250px;
+  padding: 2rem 0;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 6rem;
+  font-weight: 400;
+  padding: 3rem 0 2.5rem;
+}
+h1 span {
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 2rem;
+  color: #b41288;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 200;
+  padding: 0 6rem 0 0;
+}
+
+ul {
+  margin: 3.5rem 2rem;
+}
+ul span {
+  font-weight: 600;
+}
+li {
+  padding: 0.5rem;
+  font-weight: 200;
+}
+
+.bottom-container {
+  padding: 1.5rem 0;
+}
+
+.bottom-container > div {
+  display: inline;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  user-select: none;
+
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.check:checked {
+  background-color: #b41288;
+}
+
+.check:focus {
+  outline: none;
+}
+
+.proceed {
+  margin-left: 20%;
+}
+
+.button {
+  padding: 1rem 3rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-bottom: 4rem;
+}
+
+.button:hover:enabled {
+  background-color: #01feff;
+  box-shadow: 0 0 30px #01feff;
+}
