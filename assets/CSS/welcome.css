@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 body {
   color: white;
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   user-select: none;
 }
 
@@ -33,6 +33,9 @@ main,
   margin-inline: auto;
   max-width: 60%;
 }
+section.bottom-container{
+  max-width: 80%;
+}
 
 .logo img {
   text-align: left;
@@ -42,10 +45,10 @@ main,
 }
 
 h1 {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 6rem;
   font-weight: 400;
-  padding: 3rem 0 2.5rem;
+  padding: 0 0 2.5rem;
 }
 h1 span {
   font-weight: 600;
@@ -118,10 +121,11 @@ li {
   border: 1px solid transparent;
   font-size: 1.3rem;
   cursor: pointer;
+  margin-top: 30px;
   margin-bottom: 4rem;
 }
 
-.button:hover {
+.button:hover:enabled {
   background-color: #01feff;
   box-shadow: 0 0 30px #01feff;
 }

@@ -28,15 +28,16 @@ header {
 }
 
 .border-timer {
-  background: conic-gradient(rgba(255, 255, 255, 0.13) 0.00% 30%,rgb(139, 228, 255)0%);
+  background: conic-gradient(
+    rgba(255, 255, 255, 0.13) 0% 100%,
+    rgb(139, 228, 255) 0%
+  );
   width: 10vw;
   height: 10vw;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  
 }
 
 .timer {
@@ -53,23 +54,28 @@ header {
   color: white;
 }
 .timer p,
-.timer h2{
-    margin: 0; 
+.timer h2 {
+  margin: 0;
+  line-height: 2.3vw;
 }
-.timer h2{
-    font-size: 2.0em;
+.timer h2 {
+  font-size: 2.5em;
+}
+.timer p {
+  font-size: 0.9vw;
 }
 
 /*main*/
+.h3 {
+  display: flex;
+  justify-content: center;
+}
 main h3 {
   color: white;
   text-align: center;
   font-size: 2.5em;
   margin: 15px 0 50px 0;
-}
-main h3 span {
-  display: block;
-  font-weight: bold;
+  transition: opacity 0.5s ease;
 }
 
 main button {
@@ -88,9 +94,6 @@ main button {
   cursor: pointer;
 }
 
-main button:hover {
-  background-color: rgb(82, 82, 153);
-}
 .button {
   display: flex;
   justify-content: space-around;
@@ -102,8 +105,45 @@ footer p {
   text-transform: uppercase;
   color: white;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 45px;
 }
 footer p span {
   color: rgb(226, 43, 211);
+}
+.hidden {
+  display: none;
+}
+/*change*/
+.change1 {
+  flex-direction: row-reverse;
+}
+.change2 {
+  flex-direction: row-reverse;
+}
+.change {
+  display: flex;
+  flex-direction: column-reverse;
+}
+/* risposta sbagliata e corretta */
+.correct,
+.wrong {
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+}
+.correct {
+  color: transparent;
+  /* color: rgb(68, 241, 253);
+  position: relative;
+  top: 77px;
+  display: none;
+  transition: all 0.5s ease; */
+}
+.wrong {
+  color: transparent;
+  /* color: rgb(197, 0, 171);
+  position: relative;
+  top: 77px;
+  display: none;
+  transition: all 0.5s ease; */
 }
