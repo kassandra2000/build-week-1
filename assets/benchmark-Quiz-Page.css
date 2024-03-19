@@ -89,9 +89,9 @@ main button {
   cursor: pointer;
 }
 
-main button:hover {
-  background-color: rgb(82, 82, 153);
-}
+/* main button:hover {
+  background-color: rgb(226, 43, 211);
+} */
 .button {
   display: flex;
   justify-content: space-around;
