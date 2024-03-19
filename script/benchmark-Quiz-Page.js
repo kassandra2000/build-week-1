@@ -106,6 +106,8 @@ const button3 = document.querySelector(".btn3");
 const button4 = document.querySelector(".btn4");
 const p = document.querySelector("footer p");
 const borderTimer = document.querySelector(".border-timer");
+const pCorrect = document.querySelector(".correct");
+const pWrong = document.querySelector(".wrong");
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //randomizzare bottoni
@@ -132,8 +134,12 @@ const timerCounter = function () {
       counterTimerColor = 1;
     }
     button1.onclick = function () {
-      count = 1;
       button1.classList.add("selected");
+      pWrong.style.display = "block";
+      setTimeout(() => {
+        pWrong.style.display = "none";
+      }, 600);
+      count = 1;
       setInterval(function () {
         button1.classList.remove("selected");
       }, 300);
@@ -144,8 +150,12 @@ const timerCounter = function () {
       counterTimerColor = 0;
     };
     button2.onclick = function () {
-      count = 1;
       button2.classList.add("selected");
+      pWrong.style.display = "block";
+      setTimeout(() => {
+        pWrong.style.display = "none";
+      }, 600);
+      count = 1;
       setInterval(function () {
         button2.classList.remove("selected");
       }, 300);
@@ -156,8 +166,12 @@ const timerCounter = function () {
       counterTimerColor = 0;
     };
     button3.onclick = function () {
-      count = 1;
       button3.classList.add("selected");
+      pWrong.style.display = "block";
+      setTimeout(() => {
+        pWrong.style.display = "none";
+      }, 600);
+      count = 1;
       setInterval(function () {
         button3.classList.remove("selected");
       }, 300);
@@ -169,8 +183,13 @@ const timerCounter = function () {
     };
     button4.onclick = function () {
       counterTimerColor = 0;
-      count = 1;
+
       button4.classList.add("selected");
+      pCorrect.style.display = "block";
+      setTimeout(() => {
+        pCorrect.style.display = "none";
+      }, 600);
+      count = 1;
       setInterval(function () {
         button4.classList.remove("selected");
       }, 300);
@@ -233,7 +252,7 @@ const timerCounter = function () {
 
     //calcolare percentuale risposte
     const totalCorrectAnswer = (totalResult / arreyOfQuestions.length) * 100; //percentuale risposte correte
-    const wrongAnswer = arreyOfQuestions.length-totalResult
+    const wrongAnswer = arreyOfQuestions.length - totalResult;
     const totalWrongAnswer = (wrongAnswer / arreyOfQuestions.length) * 100; //percentuale risposte sbagliate
   }, 1000);
 
