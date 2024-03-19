@@ -12,9 +12,9 @@ const updateStarRating = (rating) => {
   }
 } //I'm adding the selected class up to the selected rating
 
-updateStarRating() //default rating
+updateStarRating(currentRating) //default rating
 
-document.querySelectorAll('.star').forEach((star, index) => {
+stars.forEach((star, index) => {
   star.addEventListener('click', () => {
     const selectedAlready = star.classList.contains('selectedStar') // Checking if it's already selected
     let newRating
@@ -40,13 +40,31 @@ document.querySelectorAll('.star').forEach((star, index) => {
 
 document.getElementById('write-comment').addEventListener('input', function () {
   let submitButton = document.getElementById('submit-comment') // check if it exists
-  if (this.value.trim() !== '' && this.value.length <= 500) {
-    // if the button doesn't exists then create it if I input text (max 500 chara)...
+  const commentBox = this //I am referencing the comment box
+
+  if (commentBox.value.trim() !== '' && commentBox.value.length <= 200) {
+    // if the button doesn't exists then create it if I input text (max 200 chara)...
     if (!submitButton) {
       submitButton = document.createElement('button') // create it
       submitButton.id = 'submit-comment'
       submitButton.textContent = 'Submit'
-      submitButton.type = 'submit'
+      submitButton.type = 'button'
+
+      submitButton.onclick = function () {
+        if (currentRating > 0 && commentBox.value.trim() !== '') {
+          const feedback = {
+            rating: currentRating,
+            comment: commentBox.value,
+          }
+          console.log(feedback)
+          alert('Thanks for your feedback!')
+          window.location.reload() // refresh the page and send feedback
+        } else {
+          if (commentBox.value.trim() !== '' && currentRating === 0) {
+            alert('You must rate your experience before continuing!')
+          }
+        }
+      }
 
       document.querySelector('.input-comment').appendChild(submitButton) //insert it
     }
@@ -58,17 +76,6 @@ document.getElementById('write-comment').addEventListener('input', function () {
   }
 })
 
-const handleSubmit = (e) => {
-  e.preventDefault()
+/*const charCount = document.getElementById('char-count') // trying to display the character count
 
-  const commentContent = document.getElementById('write-comment').value
-  const feedback = {
-    rating: currentRating,
-    comment: commentContent,
-  }
-  console.log(feedback)
-}
-
-document
-  .getElementById('submit-comment')
-  ?.addEventListener('click', handleSubmit)
+  charCount.innerText = `${commentBox.value.length}/200` */
