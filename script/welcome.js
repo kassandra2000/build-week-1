@@ -1,7 +1,7 @@
-const checkbox = document.getElementById("checkbox")
-const proceedButton = document.getElementById("proceedBtn")
+const checkbox = document.getElementById('checkbox')
+const proceedButton = document.getElementById('proceedBtn')
 proceedButton.disabled = true
-checkbox.addEventListener("change", function () {
+checkbox.addEventListener('change', function () {
   if (checkbox.checked) {
     proceedButton.disabled = false
   } else {
@@ -10,5 +10,5 @@ checkbox.addEventListener("change", function () {
 })
 
 proceedButton.onclick = function () {
-  window.location.href = "benchmark-Quiz-Page.html"
+  window.location.href = 'difficulty.html'
 }
