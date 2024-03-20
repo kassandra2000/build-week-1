@@ -147,3 +147,9 @@ footer p span {
   display: none;
   transition: all 0.5s ease;
 }
+
+
+.correctAnswer{
+  text-shadow: 3px 3px 3px #013e41;
+    background: #00f3ff;
+}

@@ -100,10 +100,6 @@ const arreyOfQuestions = [
 //prendere html
 const timerH2 = document.querySelector(" h2");
 const h3 = document.querySelector(" .h3 h3");
-// const button1 = document.querySelector(".btn1");
-// const button2 = document.querySelector(".btn2");
-// const button3 = document.querySelector(".btn3");
-// const button4 = document.querySelector(".btn4");
 const p = document.querySelector("footer p");
 const borderTimer = document.querySelector(".border-timer");
 const pCorrect = document.querySelector(".correct");
@@ -120,13 +116,9 @@ function shuffle(questionArr) {
   let currentIndex = questionArr.length;
   let randomIndex;
 
-  // While there remain elements to shuffle.
   while (currentIndex > 0) {
-    // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [questionArr[currentIndex], questionArr[randomIndex]] = [
       questionArr[randomIndex],
       questionArr[currentIndex],
@@ -136,7 +128,6 @@ function shuffle(questionArr) {
   return questionArr;
 }
 
-console.log(questionArr);
 for (let i = 0; i < arreyOfQuestions.length; i++) {
   const incorrectAnswers = questionArr.push(
     arreyOfQuestions[i].incorrect_answers
@@ -155,7 +146,7 @@ for (let i = 0; i < arreyOfQuestions.length; i++) {
 
   shuffle(questionArr[i]);
 }
-console.log(questionArr);
+
 //trovare bottoni
 const buttons = document.querySelectorAll(".button button");
 const button1 = buttons[0];
@@ -166,21 +157,18 @@ const button3 = buttons[2];
 button3.classList.add("btn3");
 const button4 = buttons[3];
 button4.classList.add("btn4");
-
-console.log(button1);
+//testo bottoni
 for (let i = 0; i < questionArr[0].length; i++) {
   buttons[i].innerText = questionArr[0][i];
 }
 let totalResult = 0;
 const lengthArray = arreyOfQuestions.length;
-// console.log(section1.classList.item(section1.classList.length - 1));
+
 //contatore
 const timerCounter = function () {
   let counterTimerColor = 0;
   let count = 5;
   let i = 0;
-  //risposte esatte
-
   const interval = setInterval(function () {
     counterTimerColor += 1.69;
     count--;
@@ -191,73 +179,118 @@ const timerCounter = function () {
       counterTimerColor = 1;
     }
     button1.onclick = function () {
-      console.log("ciao");
-      count = 1;
+      for (let j = 0; j < buttons.length; j++) {
+        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
+          buttons[j].classList.add("correctAnswer");
+          setTimeout(() => {
+            buttons[j].classList.remove("correctAnswer");
+          }, 1500);
+        }
+      }
       if (button1.innerText === arreyOfQuestions[i].correct_answer) {
         totalResult++;
-        console.log(totalResult);
+      }
+      if (button1.innerText !== arreyOfQuestions[i].correct_answer) {
+        button1.classList.add("selected");
       }
 
-      button1.classList.add("selected");
-      count = 1;
-      setInterval(function () {
+      setTimeout(function () {
         button1.classList.remove("selected");
-      }, 300);
+      }, 1500);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
       }
       counterTimerColor = 0;
+      setTimeout(() => {
+        count = 1;
+      }, 1000);
     };
     button2.onclick = function () {
-      count = 1;
+      for (let j = 0; j < buttons.length; j++) {
+        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
+          buttons[j].classList.add("correctAnswer");
+          setTimeout(() => {
+            buttons[j].classList.remove("correctAnswer");
+          }, 1500);
+        }
+      }
+
       if (button2.innerText === arreyOfQuestions[i].correct_answer) {
         totalResult++;
         console.log(totalResult);
       }
-      button2.classList.add("selected");
-
-      count = 1;
-      setInterval(function () {
+      if (button2.innerText !== arreyOfQuestions[i].correct_answer) {
+        button2.classList.add("selected");
+      }
+      setTimeout(function () {
         button2.classList.remove("selected");
-      }, 300);
+      }, 1500);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
       }
       counterTimerColor = 0;
+      setTimeout(() => {
+        count = 1;
+      }, 1000);
     };
     button3.onclick = function () {
-      count = 1;
+      for (let j = 0; j < buttons.length; j++) {
+        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
+          buttons[j].classList.add("correctAnswer");
+          setTimeout(() => {
+            buttons[j].classList.remove("correctAnswer");
+          }, 1500);
+        }
+      }
+
       if (button3.innerText === arreyOfQuestions[i].correct_answer) {
         totalResult++;
-        console.log(totalResult);
       }
-      button3.classList.add("selected");
-      count = 1;
-      setInterval(function () {
+      if (button3.innerText !== arreyOfQuestions[i].correct_answer) {
+        button3.classList.add("selected");
+      }
+
+      setTimeout(function () {
         button3.classList.remove("selected");
-      }, 300);
+      }, 1500);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
       }
       counterTimerColor = 0;
+      setTimeout(() => {
+        count = 1;
+      }, 1000);
     };
     button4.onclick = function () {
-      counterTimerColor = 0;
-      count = 1;
+      for (let j = 0; j < buttons.length; j++) {
+        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
+          buttons[j].classList.add("correctAnswer");
+          setTimeout(() => {
+            buttons[j].classList.remove("correctAnswer");
+          }, 1500);
+        }
+      }
+
       if (button4.innerText === arreyOfQuestions[i].correct_answer) {
         totalResult++;
       }
-      button4.classList.add("selected");
-      setInterval(function () {
+      if (button4.innerText !== arreyOfQuestions[i].correct_answer) {
+        button4.classList.add("selected");
+      }
+      setTimeout(function () {
         button4.classList.remove("selected");
       }, 1500);
       if (i === arreyOfQuestions.length - 1) {
         clearInterval(interval);
         window.location.href = "./Result.html";
       }
+      counterTimerColor = 0;
+      setTimeout(() => {
+        count = 1;
+      }, 1000);
       //risultato incrementato ad ogni click della risposta esatta
     };
 
