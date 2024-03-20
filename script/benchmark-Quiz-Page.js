@@ -95,230 +95,243 @@ const arreyOfQuestions = [
     correct_answer: "Objective-C",
     incorrect_answers: ["C#", "Ruby", "C++"],
   },
-]
+];
 
 //prendere html
-const timerH2 = document.querySelector(" h2")
-const h3 = document.querySelector(" .h3 h3")
-const button1 = document.querySelector(".btn1")
-const button2 = document.querySelector(".btn2")
-const button3 = document.querySelector(".btn3")
-const button4 = document.querySelector(".btn4")
-const p = document.querySelector("footer p")
-const borderTimer = document.querySelector(".border-timer")
-const pCorrect = document.querySelector(".correct")
-const pWrong = document.querySelector(".wrong")
+const timerH2 = document.querySelector(" h2");
+const h3 = document.querySelector(" .h3 h3");
+// const button1 = document.querySelector(".btn1");
+// const button2 = document.querySelector(".btn2");
+// const button3 = document.querySelector(".btn3");
+// const button4 = document.querySelector(".btn4");
+const p = document.querySelector("footer p");
+const borderTimer = document.querySelector(".border-timer");
+const pCorrect = document.querySelector(".correct");
+const pWrong = document.querySelector(".wrong");
+const section1 = document.querySelector(".sect1");
+const section2 = document.querySelector(".sect2");
 //punteggio risposte corette
-const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //randomizzare bottoni
-const changeArr = ["change1", "Nan", "change2"]
+const questionArr = []; //tutte le risposte
+//creare bottoni
+//Fisher–Yates shuffle!!!
+function shuffle(questionArr) {
+  let currentIndex = questionArr.length;
+  let randomIndex;
 
-const section1 = document.querySelector(".sect1")
-const section2 = document.querySelector(".sect2")
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
 
-let totalResult = 0
-const lengthArray = arreyOfQuestions.length
-console.log(lengthArray)
+    // And swap it with the current element.
+    [questionArr[currentIndex], questionArr[randomIndex]] = [
+      questionArr[randomIndex],
+      questionArr[currentIndex],
+    ];
+  }
+
+  return questionArr;
+}
+
+console.log(questionArr);
+for (let i = 0; i < arreyOfQuestions.length; i++) {
+  const incorrectAnswers = questionArr.push(
+    arreyOfQuestions[i].incorrect_answers
+  );
+  questionArr[i].push(arreyOfQuestions[i].correct_answer);
+  console.log();
+  if (questionArr[i].length === 4) {
+    if (i < 2) {
+      const btn = document.createElement("button");
+      section1.appendChild(btn);
+    } else if (i < 4) {
+      const btn = document.createElement("button");
+      section2.appendChild(btn);
+    }
+  }
+
+  shuffle(questionArr[i]);
+}
+console.log(questionArr);
+//trovare bottoni
+const buttons = document.querySelectorAll(".button button");
+const button1 = buttons[0];
+button1.classList.add("btn1");
+const button2 = buttons[1];
+button2.classList.add("btn2");
+const button3 = buttons[2];
+button3.classList.add("btn3");
+const button4 = buttons[3];
+button4.classList.add("btn4");
+
+console.log(button1);
+for (let i = 0; i < questionArr[0].length; i++) {
+  buttons[i].innerText = questionArr[0][i];
+}
+let totalResult = 0;
+const lengthArray = arreyOfQuestions.length;
 // console.log(section1.classList.item(section1.classList.length - 1));
 //contatore
 const timerCounter = function () {
-  let counterTimerColor = 0
-  let count = 60
-  let i = 0
+  let counterTimerColor = 0;
+  let count = 5;
+  let i = 0;
   //risposte esatte
 
   const interval = setInterval(function () {
-    counterTimerColor += 1.69
-    count--
-    timerH2.innerHTML = count
-    borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`
+    counterTimerColor += 1.69;
+    count--;
+    timerH2.innerHTML = count;
+    borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`;
 
     if (counterTimerColor === 101.39999999999992) {
-      counterTimerColor = 1
+      counterTimerColor = 1;
     }
     button1.onclick = function () {
-      count = 1
+      console.log("ciao");
+      count = 1;
       if (button1.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
+        totalResult++;
+        console.log(totalResult);
       }
 
-      button1.classList.add("selected")
-      pWrong.style.display = "block"
-      setTimeout(() => {
-        pWrong.style.display = "none"
-      }, 600)
-      count = 1
+      button1.classList.add("selected");
+      count = 1;
       setInterval(function () {
-        button1.classList.remove("selected")
-      }, 300)
+        button1.classList.remove("selected");
+      }, 300);
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
+        clearInterval(interval);
+        window.location.href = "./Result.html";
       }
-      counterTimerColor = 0
-    }
+      counterTimerColor = 0;
+    };
     button2.onclick = function () {
-      count = 1
+      count = 1;
       if (button2.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
+        totalResult++;
+        console.log(totalResult);
       }
-      button2.classList.add("selected")
-      pWrong.style.display = "block"
-      setTimeout(() => {
-        pWrong.style.display = "none"
-      }, 600)
-      count = 1
+      button2.classList.add("selected");
+
+      count = 1;
       setInterval(function () {
-        button2.classList.remove("selected")
-      }, 300)
+        button2.classList.remove("selected");
+      }, 300);
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
+        clearInterval(interval);
+        window.location.href = "./Result.html";
       }
-      counterTimerColor = 0
-    }
+      counterTimerColor = 0;
+    };
     button3.onclick = function () {
-      count = 1
+      count = 1;
       if (button3.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
+        totalResult++;
+        console.log(totalResult);
       }
-      button3.classList.add("selected")
-      pWrong.style.display = "block"
-      setTimeout(() => {
-        pWrong.style.display = "none"
-      }, 600)
-      count = 1
+      button3.classList.add("selected");
+      count = 1;
       setInterval(function () {
-        button3.classList.remove("selected")
-      }, 300)
+        button3.classList.remove("selected");
+      }, 300);
       if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
+        clearInterval(interval);
+        window.location.href = "./Result.html";
       }
-      counterTimerColor = 0
-    }
+      counterTimerColor = 0;
+    };
     button4.onclick = function () {
-      counterTimerColor = 0
-      count = 1
+      counterTimerColor = 0;
+      count = 1;
       if (button4.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
+        totalResult++;
       }
-      button4.classList.add("selected")
+      button4.classList.add("selected");
       setInterval(function () {
-        button4.classList.remove("selected")
-      }, 1500)
+        button4.classList.remove("selected");
+      }, 1500);
       if (i === arreyOfQuestions.length - 1) {
-        console.log("ciao")
-        clearInterval(interval)
-        window.location.href = "./Result.html"
+        clearInterval(interval);
+        window.location.href = "./Result.html";
       }
-
-      counterTimerColor = 0
-
-      button4.classList.add("selected")
-      pCorrect.style.display = "block"
-      setTimeout(() => {
-        pCorrect.style.display = "none"
-      }, 600)
-      count = 1
-      setInterval(function () {
-        button4.classList.remove("selected")
-      }, 300)
       //risultato incrementato ad ogni click della risposta esatta
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
-      }
-    }
+    };
 
-    // console.log(totalResult);
     //cambio domande
     if (count === 0) {
-      const randomNumber = Math.floor(Math.random() * 3)
-      const randomNumber2 = Math.floor(Math.random() * 3)
-      i++
-      count = 60
-      h3.innerHTML = arreyOfQuestions[i].question
-      if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
-        button2.classList.remove("hidden")
-        button3.classList.remove("hidden")
-        button1.innerHTML = arreyOfQuestions[i].incorrect_answers[0]
-        section1.classList.remove(
-          section1.classList.item(section1.classList.length - 1) //cambio section
-        )
-        section2.classList.remove(
-          section2.classList.item(section2.classList.length - 1) //cambio section
-        )
+      i++;
+      count = 60;
+      h3.innerHTML = arreyOfQuestions[i].question;
 
-        section1.classList.add(changeArr[randomNumber])
-        section2.classList.add(changeArr[randomNumber2])
-        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1]
-        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2]
-        button4.innerHTML = arreyOfQuestions[i].correct_answer
-
-        // console.log(i);
-        p.innerHTML = `question ${i + 1} <span>/10</span>`
-      } else {
-        button2.classList.add("hidden")
-        button3.classList.add("hidden")
-        p.innerHTML = `question ${i + 1} <span>/10</span>`
+      if (questionArr[i].length < 3) {
+        button3.style.display = "none";
+        button4.style.display = "none";
+      } else if (questionArr[i].length > 2) {
+        button3.style.display = "block";
+        button4.style.display = "block";
+      }
+      for (let j = 0; j < questionArr[i].length; j++) {
+        buttons[j].innerText = questionArr[i][j];
       }
 
-      // interruzione ciclo
-      if (i === arreyOfQuestions.length - 1) {
-        const percentageResult = (totalResult / arreyOfQuestions.length) * 100
-
-        localStorage.setItem("correct", totalResult)
-        localStorage.setItem("correctPercentage", percentageResult)
-        localStorage.setItem("length", lengthArray)
-        setInterval(function () {
-          clearInterval(interval)
-          window.location.href = "./Result.html"
-        }, 59500)
-      }
+      p.innerHTML = `question ${i + 1} <span>/10</span>`;
     }
-  }, 1000)
-  return count
-}
-//totalResult = (totalResult / arreyOfQuestions) * 100
-window.onload = timerCounter()
+
+    // interruzione ciclo
+    if (i === arreyOfQuestions.length - 1) {
+      const percentageResult = (totalResult / arreyOfQuestions.length) * 100;
+
+      localStorage.setItem("correct", totalResult);
+      localStorage.setItem("correctPercentage", percentageResult);
+      localStorage.setItem("length", lengthArray);
+      setInterval(function () {
+        clearInterval(interval);
+        window.location.href = "./Result.html";
+      }, 59500);
+    }
+    // }
+  }, 1000);
+  return count;
+};
+window.onload = timerCounter();
+
 //calcolare percentuale risposte
 
 /////////////////////////////////////////////////////////////////////////////
-const rateUs = document.getElementById("rateUsContainer")
+const rateUs = document.getElementById("rateUsContainer");
 rateUs.addEventListener("click", () => {
-  window.location.href = "../feedback.html"
-})
+  window.location.href = "../feedback.html";
+});
 
-const correctAnswers = localStorage.getItem("correctPercentage")
-console.log(correctAnswers)
-const correct = document.querySelector("#correct h3")
-correct.innerText = correctAnswers + "%"
-const wrong = document.querySelector("#wrong h3")
-wrong.innerText = 100 - correctAnswers + "%"
-const graph = document.querySelector(".percentage")
-graphPercentage = 100 - correctAnswers
-graph.style.background = `conic-gradient(rgb(210,0,148)0% ${graphPercentage}%,rgb(0,255,255)0%)`
+const correctAnswers = localStorage.getItem("correctPercentage");
+console.log(correctAnswers);
+const correct = document.querySelector("#correct h3");
+correct.innerText = correctAnswers + "%";
+const wrong = document.querySelector("#wrong h3");
+wrong.innerText = 100 - correctAnswers + "%";
+const graph = document.querySelector(".percentage");
+graphPercentage = 100 - correctAnswers;
+graph.style.background = `conic-gradient(rgb(210,0,148)0% ${graphPercentage}%,rgb(0,255,255)0%)`;
 
-const numOfCorrectQuestions = localStorage.getItem("correct")
-const numOfQuestions = localStorage.getItem("length")
-const numOfWrongQuestions = numOfQuestions - numOfCorrectQuestions
-const correctQuestions = document.querySelector("#correct p")
-const wrongQuestions = document.querySelector("#wrong p")
+const numOfCorrectQuestions = localStorage.getItem("correct");
+const numOfQuestions = localStorage.getItem("length");
+const numOfWrongQuestions = numOfQuestions - numOfCorrectQuestions;
+const correctQuestions = document.querySelector("#correct p");
+const wrongQuestions = document.querySelector("#wrong p");
 correctQuestions.innerText =
-  numOfCorrectQuestions + "/" + numOfQuestions + " questions"
+  numOfCorrectQuestions + "/" + numOfQuestions + " questions";
 wrongQuestions.innerText =
-  numOfWrongQuestions + "/" + numOfQuestions + " questions"
+  numOfWrongQuestions + "/" + numOfQuestions + " questions";
 
 if (correctAnswers < 60) {
-  const noPassText = document.querySelector("#congratulations h1")
-  const noPassText2 = document.querySelector("#congratulations h3")
-  const noPassText3 = document.querySelector("#congratulations p")
-  noPassText.innerText = "Exam Failed"
-  noPassText2.innerText = "You haven't passed the exam"
-  noPassText3.innerText = "We'll contact you for further instruction"
+  const noPassText = document.querySelector("#congratulations h1");
+  const noPassText2 = document.querySelector("#congratulations h3");
+  const noPassText3 = document.querySelector("#congratulations p");
+  noPassText.innerText = "Exam Failed";
+  noPassText2.innerText = "You haven't passed the exam";
+  noPassText3.innerText = "We'll contact you for further instruction";
 }
