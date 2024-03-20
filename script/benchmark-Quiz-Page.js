@@ -586,6 +586,21 @@ const pCorrect = document.querySelector('.correct')
 const pWrong = document.querySelector('.wrong')
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+/////////attempt at difficulty selection
+const selectArray = function (difficulty) {
+  if (difficulty === 'easy') {
+    return arreyOfQuestions
+  } else if (difficulty === 'medium') {
+    return mediumArray
+  } else if (difficulty === 'hard') {
+    return hardArray
+  }
+}
+const selectedDifficulty = 'medium'
+const questionsArray = selectArray(selectedDifficulty)
+console.log(selectArray(selectedDifficulty))
+
 //randomizzare bottoni
 const changeArr = ['change1', 'Nan', 'change2']
 
@@ -593,7 +608,7 @@ const section1 = document.querySelector('.sect1')
 const section2 = document.querySelector('.sect2')
 
 let totalResult = 0
-const lengthArray = arreyOfQuestions.length
+const lengthArray = questionsArray.length
 console.log(lengthArray)
 // console.log(section1.classList.item(section1.classList.length - 1));
 //contatore
@@ -614,7 +629,7 @@ const timerCounter = function () {
     }
     button1.onclick = function () {
       count = 1
-      if (button1.innerText === arreyOfQuestions[i].correct_answer) {
+      if (button1.innerText === selectArray[i].correct_answer) {
         totalResult++
         console.log(totalResult)
       }
@@ -628,7 +643,7 @@ const timerCounter = function () {
       setInterval(function () {
         button1.classList.remove('selected')
       }, 300)
-      if (i === arreyOfQuestions.length - 1) {
+      if (i === selectArray.length - 1) {
         clearInterval(interval)
         window.location.href = './Result.html'
       }
@@ -636,7 +651,7 @@ const timerCounter = function () {
     }
     button2.onclick = function () {
       count = 1
-      if (button2.innerText === arreyOfQuestions[i].correct_answer) {
+      if (button2.innerText === selectArray[i].correct_answer) {
         totalResult++
         console.log(totalResult)
       }
