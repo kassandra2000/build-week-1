@@ -3,20 +3,191 @@ const arreyOfQuestions = [
     type: 'multiple',
     difficulty: 'easy',
     category: 'Science: Computers',
-    question: 'This mobile OS held the largest market share in 2012.',
-    correct_answer: 'iOS',
-    incorrect_answers: ['Android', 'BlackBerry', 'Symbian'],
+    question: 'How long is an IPv6 address?',
+    correct_answer: '128 bits',
+    incorrect_answers: ['32 bits', '64 bits', '128 bytes'],
   },
   {
     type: 'multiple',
     difficulty: 'easy',
     category: 'Science: Computers',
-    question: 'In computing, what does LAN stand for?',
-    correct_answer: 'Local Area Network',
+    question:
+      'What is the code name for the mobile operating system Android 7.0?',
+    correct_answer: 'Nougat',
+    incorrect_answers: ['Ice Cream Sandwich', 'Jelly Bean', 'Marshmallow'],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'The Windows ME operating system was released in the year 2000.',
+    correct_answer: 'True',
+    incorrect_answers: ['False'],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'The logo for Snapchat is a Bell.',
+    correct_answer: 'False',
+    incorrect_answers: ['True'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'What does the computer software acronym JVM stand for?',
+    correct_answer: 'Java Virtual Machine',
     incorrect_answers: [
-      'Long Antenna Node',
-      'Light Access Node',
-      'Land Address Navigation',
+      'Java Vendor Machine',
+      'Java Visual Machine',
+      'Just Virtual Machine',
+    ],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'Time on Computers is measured via the EPOX System.',
+    correct_answer: 'False',
+    incorrect_answers: ['True'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'When Gmail first launched, how much storage did it provide for your email?',
+    correct_answer: '1GB',
+    incorrect_answers: ['512MB', '5GB', 'Unlimited'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'How many values can a single byte represent?',
+    correct_answer: '256',
+    incorrect_answers: ['8', '1', '1024'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'In any programming language, what is the most common way to iterate through an array?',
+    correct_answer: '&#039;For&#039; loops',
+    incorrect_answers: [
+      '&#039;If&#039; Statements',
+      '&#039;Do-while&#039; loops',
+      '&#039;While&#039; loops',
+    ],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'Linus Torvalds created Linux and Git.',
+    correct_answer: 'True',
+    incorrect_answers: ['False'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'What is the most preferred image format used for logos in the Wikimedia database?',
+    correct_answer: '.svg',
+    incorrect_answers: ['.png', '.jpeg', '.gif'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'Which company was established on April 1st, 1976 by Steve Jobs, Steve Wozniak and Ronald Wayne?',
+    correct_answer: 'Apple',
+    incorrect_answers: ['Microsoft', 'Atari', 'Commodore'],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'Linux was first created as an alternative to Windows XP.',
+    correct_answer: 'False',
+    incorrect_answers: ['True'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'The numbering system with a radix of 16 is more commonly referred to as ',
+    correct_answer: 'Hexidecimal',
+    incorrect_answers: ['Binary', 'Duodecimal', 'Octal'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'What does the Prt Sc button do?',
+    correct_answer:
+      'Captures what&#039;s on the screen and copies it to your clipboard',
+    incorrect_answers: [
+      'Nothing',
+      'Saves a .png file of what&#039;s on the screen in your screenshots folder in photos',
+      'Closes all windows',
+    ],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'The C programming language was created by this American computer scientist. ',
+    correct_answer: 'Dennis Ritchie',
+    incorrect_answers: [
+      'Tim Berners Lee',
+      'al-Khw\u0101rizm\u012b',
+      'Willis Ware',
+    ],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'Which programming language shares its name with an island in Indonesia?',
+    correct_answer: 'Java',
+    incorrect_answers: ['Python', 'C', 'Jakarta'],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.',
+    correct_answer: 'False',
+    incorrect_answers: ['True'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question:
+      'If you were to code software in this language you&#039;d only be able to type 0&#039;s and 1&#039;s.',
+    correct_answer: 'Binary',
+    incorrect_answers: ['JavaScript', 'C++', 'Python'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'In computing, what does MIDI stand for?',
+    correct_answer: 'Musical Instrument Digital Interface',
+    incorrect_answers: [
+      'Musical Interface of Digital Instruments',
+      'Modular Interface of Digital Instruments',
+      'Musical Instrument Data Interface',
     ],
   },
   {
@@ -36,38 +207,39 @@ const arreyOfQuestions = [
     difficulty: 'easy',
     category: 'Science: Computers',
     question:
-      'In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?',
-    correct_answer: 'Final',
-    incorrect_answers: ['Static', 'Private', 'Public'],
+      'In &quot;Hexadecimal&quot;, what color would be displayed from the color code? &quot;#00FF00&quot;?',
+    correct_answer: 'Green',
+    incorrect_answers: ['Red', 'Blue', 'Yellow'],
   },
   {
     type: 'multiple',
     difficulty: 'easy',
     category: 'Science: Computers',
     question:
-      'Which computer hardware device provides an interface for all other connected devices to communicate?',
-    correct_answer: 'Motherboard',
+      'According to the International System of Units, how many bytes are in a kilobyte of RAM?',
+    correct_answer: '1000',
+    incorrect_answers: ['512', '1024', '500'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'HTML is what type of language?',
+    correct_answer: 'Markup Language',
     incorrect_answers: [
-      'Central Processing Unit',
-      'Hard Disk Drive',
-      'Random Access Memory',
+      'Macro Language',
+      'Programming Language',
+      'Scripting Language',
     ],
   },
   {
     type: 'multiple',
     difficulty: 'easy',
     category: 'Science: Computers',
-    question: 'What does the &quot;MP&quot; stand for in MP3?',
-    correct_answer: 'Moving Picture',
-    incorrect_answers: ['Music Player', 'Multi Pass', 'Micro Point'],
-  },
-  {
-    type: 'multiple',
-    difficulty: 'easy',
-    category: 'Science: Computers',
-    question: 'What does GHz stand for?',
-    correct_answer: 'Gigahertz',
-    incorrect_answers: ['Gigahotz', 'Gigahetz', 'Gigahatz'],
+    question:
+      'In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?',
+    correct_answer: 'Final',
+    incorrect_answers: ['Static', 'Private', 'Public'],
   },
   {
     type: 'boolean',
@@ -78,22 +250,46 @@ const arreyOfQuestions = [
     incorrect_answers: ['False'],
   },
   {
-    type: 'multiple',
+    type: 'boolean',
     difficulty: 'easy',
     category: 'Science: Computers',
     question:
-      'Which computer language would you associate Django framework with?',
-    correct_answer: 'Python',
-    incorrect_answers: ['C#', 'C++', 'Java'],
+      'Pointers were not used in the original C programming language; they were added later on in C++.',
+    correct_answer: 'False',
+    incorrect_answers: ['True'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'What language does Node.js use?',
+    correct_answer: 'JavaScript',
+    incorrect_answers: ['Java', 'Java Source', 'Joomla Source Code'],
   },
   {
     type: 'multiple',
     difficulty: 'easy',
     category: 'Science: Computers',
     question:
-      'The programming language &#039;Swift&#039; was created to replace what other programming language?',
-    correct_answer: 'Objective-C',
-    incorrect_answers: ['C#', 'Ruby', 'C++'],
+      'The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:',
+    correct_answer: 'HD Graphics 500',
+    incorrect_answers: [
+      'HD Graphics 700 ',
+      'HD Graphics 600',
+      'HD Graphics 7000',
+    ],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'easy',
+    category: 'Science: Computers',
+    question: 'What does LTS stand for in the software market?',
+    correct_answer: 'Long Term Support',
+    incorrect_answers: [
+      'Long Taco Service',
+      'Ludicrous Transfer Speed',
+      'Ludicrous Turbo Speed',
+    ],
   },
 ]
 
@@ -102,48 +298,9 @@ const mediumArray = [
     type: 'multiple',
     difficulty: 'medium',
     category: 'Science: Computers',
-    question:
-      'What does AD stand for in relation to Windows Operating Systems? ',
-    correct_answer: 'Active Directory',
-    incorrect_answers: [
-      'Alternative Drive',
-      'Automated Database',
-      'Active Department',
-    ],
-  },
-  {
-    type: 'boolean',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question: 'The HTML5 standard was published in 2014.',
-    correct_answer: 'True',
-    incorrect_answers: ['False'],
-  },
-  {
-    type: 'boolean',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question:
-      'A Boolean value of &quot;0&quot; represents which of these words?',
-    correct_answer: 'False',
-    incorrect_answers: ['True'],
-  },
-  {
-    type: 'multiple',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question: 'What is the main CPU is the Sega Mega Drive / Sega Genesis?',
-    correct_answer: 'Motorola 68000',
-    incorrect_answers: ['Zilog Z80', 'Yamaha YM2612', 'Intel 8088'],
-  },
-  {
-    type: 'multiple',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question:
-      'What is the name of the default theme that is installed with Windows XP?',
-    correct_answer: 'Luna',
-    incorrect_answers: ['Neptune', 'Whistler', 'Bliss'],
+    question: 'Generally, which component of a computer draws the most power?',
+    correct_answer: 'Video Card',
+    incorrect_answers: ['Hard Drive', 'Processor', 'Power Supply'],
   },
   {
     type: 'multiple',
@@ -155,26 +312,30 @@ const mediumArray = [
     incorrect_answers: ['Four Years', 'Two Years', 'Eight Years'],
   },
   {
-    type: 'multiple',
+    type: 'boolean',
     difficulty: 'medium',
     category: 'Science: Computers',
-    question:
-      'The teapot often seen in many 3D modeling applications is called what?',
-    correct_answer: 'Utah Teapot',
-    incorrect_answers: ['Pixar Teapot', '3D Teapot', 'Tennessee Teapot'],
+    question: 'The HTML5 standard was published in 2014.',
+    correct_answer: 'True',
+    incorrect_answers: ['False'],
   },
   {
     type: 'multiple',
     difficulty: 'medium',
     category: 'Science: Computers',
     question:
-      'In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?',
-    correct_answer: '&lt;marquee&gt;&lt;/marquee&gt;',
-    incorrect_answers: [
-      '&lt;scroll&gt;&lt;/scroll&gt;',
-      '&lt;move&gt;&lt;/move&gt;',
-      '&lt;slide&gt;&lt;/slide&gt;',
-    ],
+      'All of the following programs are classified as raster graphics editors EXCEPT:',
+    correct_answer: 'Inkscape',
+    incorrect_answers: ['Paint.NET', 'GIMP', 'Adobe Photoshop'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'Which of the following is a personal computer made by the Japanese company Fujitsu?',
+    correct_answer: 'FM-7',
+    incorrect_answers: ['PC-9801', 'Xmillennium ', 'MSX'],
   },
   {
     type: 'multiple',
@@ -189,46 +350,12 @@ const mediumArray = [
     type: 'multiple',
     difficulty: 'medium',
     category: 'Science: Computers',
-    question: 'Whistler was the codename of this Microsoft Operating System.',
-    correct_answer: 'Windows XP',
-    incorrect_answers: ['Windows 2000', 'Windows 7', 'Windows 95'],
-  },
-  {
-    type: 'boolean',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question: 'MacOS is based on Linux.',
-    correct_answer: 'False',
-    incorrect_answers: ['True'],
-  },
-  {
-    type: 'multiple',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question:
-      'Which one of these is not an official development name for a Ubuntu release?',
-    correct_answer: 'Mystic Mansion',
-    incorrect_answers: ['Trusty Tahr', 'Utopic Unicorn', 'Wily Werewolf'],
-  },
-  {
-    type: 'boolean',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question: 'The open source program Redis is a relational database server.',
-    correct_answer: 'False',
-    incorrect_answers: ['True'],
-  },
-  {
-    type: 'multiple',
-    difficulty: 'medium',
-    category: 'Science: Computers',
-    question:
-      'What did the name of the Tor Anonymity Network orignially stand for?',
-    correct_answer: 'The Onion Router',
+    question: 'What does the acronym CDN stand for in terms of networking?',
+    correct_answer: 'Content Delivery Network',
     incorrect_answers: [
-      'The Only Router',
-      'The Orange Router',
-      'The Ominous Router',
+      'Content Distribution Network',
+      'Computational Data Network',
+      'Compressed Data Network',
     ],
   },
   {
@@ -236,9 +363,30 @@ const mediumArray = [
     difficulty: 'medium',
     category: 'Science: Computers',
     question:
-      'Nvidia&#039;s headquarters are based in which Silicon Valley city?',
-    correct_answer: 'Santa Clara',
-    incorrect_answers: ['Palo Alto', 'Cupertino', 'Mountain View'],
+      'Which internet company began life as an online bookstore called &#039;Cadabra&#039;?',
+    correct_answer: 'Amazon',
+    incorrect_answers: ['eBay', 'Overstock', 'Shopify'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'What does the term GPU stand for?',
+    correct_answer: 'Graphics Processing Unit',
+    incorrect_answers: [
+      'Gaming Processor Unit',
+      'Graphite Producing Unit',
+      'Graphical Proprietary Unit',
+    ],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'It&#039;s not possible to format a write-protected DVD-R Hard Disk.',
+    correct_answer: 'True',
+    incorrect_answers: ['False'],
   },
   {
     type: 'multiple',
@@ -256,9 +404,123 @@ const mediumArray = [
     type: 'boolean',
     difficulty: 'medium',
     category: 'Science: Computers',
-    question: 'Android versions are named in alphabetical order.',
+    question: 'The first computer bug was formed by faulty wires.',
+    correct_answer: 'False',
+    incorrect_answers: ['True'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'Approximately how many Apple I personal computers were created?',
+    correct_answer: '200',
+    incorrect_answers: ['100', '500', '1000'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'The name of technology company HP stands for what?',
+    correct_answer: 'Hewlett-Packard',
+    incorrect_answers: ['Howard Packmann', 'Husker-Pollosk', 'Hellman-Pohl'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'On which day did the World Wide Web go online?',
+    correct_answer: 'December 20, 1990',
+    incorrect_answers: [
+      'December 17, 1996',
+      'November 12, 1990',
+      'November 24, 1995',
+    ],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'What is the correct term for the metal object in between the CPU and the CPU fan within a computer system?',
+    correct_answer: 'Heat Sink',
+    incorrect_answers: ['CPU Vent', 'Temperature Decipator', 'Heat Vent'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'Which of these programming languages is a low-level language?',
+    correct_answer: 'Assembly',
+    incorrect_answers: ['Python', 'C#', 'Pascal'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'Which programming language was developed by Sun Microsystems in 1995?',
+    correct_answer: 'Java',
+    incorrect_answers: ['Python', 'Solaris OS', 'C++'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'Which of the following languages is used as a scripting language in the Unity 3D game engine?',
+    correct_answer: 'C#',
+    incorrect_answers: ['Java', 'C++', 'Objective-C'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'Which of these is the name for the failed key escrow device introduced by the National Security Agency in 1993?',
+    correct_answer: 'Clipper Chip',
+    incorrect_answers: ['Enigma Machine', 'Skipjack', 'Nautilus'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'Which coding language was the #1 programming language in terms of usage on GitHub in 2015?',
+    correct_answer: 'JavaScript',
+    incorrect_answers: ['C#', 'Python', 'PHP'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question:
+      'The computer OEM manufacturer Clevo, known for its Sager notebook line, is based in which country?',
+    correct_answer: 'Taiwan',
+    incorrect_answers: [
+      'United States',
+      'Germany',
+      'China (People&#039;s Republic of)',
+    ],
+  },
+  {
+    type: 'boolean',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'AMD created the first consumer 64-bit processor.',
     correct_answer: 'True',
     incorrect_answers: ['False'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'What does &quot;LCD&quot; stand for?',
+    correct_answer: 'Liquid Crystal Display',
+    incorrect_answers: [
+      'Language Control Design',
+      'Last Common Difference',
+      'Long Continuous Design',
+    ],
   },
   {
     type: 'multiple',
@@ -272,10 +534,34 @@ const mediumArray = [
     type: 'multiple',
     difficulty: 'medium',
     category: 'Science: Computers',
+    question: 'In the server hosting industry IaaS stands for...',
+    correct_answer: 'Infrastructure as a Service',
+    incorrect_answers: [
+      'Internet as a Service',
+      'Internet and a Server',
+      'Infrastructure as a Server',
+    ],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
     question:
-      'While Apple was formed in California, in which western state was Microsoft founded?',
-    correct_answer: 'New Mexico',
-    incorrect_answers: ['Washington', 'Colorado', 'Arizona'],
+      'In programming, what do you call functions with the same name but different implementations?',
+    correct_answer: 'Overloading',
+    incorrect_answers: ['Overriding', 'Abstracting', 'Inheriting'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'What does RAID stand for?',
+    correct_answer: 'Redundant Array of Independent Disks',
+    incorrect_answers: [
+      'Rapid Access for Indexed Devices',
+      'Range of Applications with Identical Designs',
+      'Randomized Abstract Identification Description',
+    ],
   },
   {
     type: 'multiple',
@@ -284,6 +570,14 @@ const mediumArray = [
     question: 'What was the first commerically available computer processor?',
     correct_answer: 'Intel 4004',
     incorrect_answers: ['Intel 486SX', 'TMS 1000', 'AMD AM386'],
+  },
+  {
+    type: 'multiple',
+    difficulty: 'medium',
+    category: 'Science: Computers',
+    question: 'What is the main CPU is the Sega Mega Drive / Sega Genesis?',
+    correct_answer: 'Motorola 68000',
+    incorrect_answers: ['Zilog Z80', 'Yamaha YM2612', 'Intel 8088'],
   },
 ]
 
@@ -576,14 +870,11 @@ const hardArray = [
 //prendere html
 const timerH2 = document.querySelector(' h2')
 const h3 = document.querySelector(' .h3 h3')
-const button1 = document.querySelector('.btn1')
-const button2 = document.querySelector('.btn2')
-const button3 = document.querySelector('.btn3')
-const button4 = document.querySelector('.btn4')
 const p = document.querySelector('footer p')
 const borderTimer = document.querySelector('.border-timer')
 const pCorrect = document.querySelector('.correct')
 const pWrong = document.querySelector('.wrong')
+const div1 = document.querySelector('.viv1')
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -602,214 +893,166 @@ const questionsArray = selectArray(selectedDifficulty)
 console.log(selectArray(selectedDifficulty))
 
 //randomizzare bottoni
-const changeArr = ['change1', 'Nan', 'change2']
+const questionArr = [] //tutte le risposte
+const arrOfTitle = [] //tutte i titoli
+let arrayChoose
+const numOfQuestion = localStorage.getItem('numOfQuestions')
+const questionChoose = function (array) {
+  for (let i = 0; i < numOfQuestion; i++) {
+    const incorrectAnswers = questionArr.push(array[i].incorrect_answers) //easy
+    questionArr[i].push(array[i].correct_answer)
+    //titoloriposte
+    arrOfTitle.push(array[i].question)
+    shuffle(questionArr[i])
+  }
+  for (let i = 0; i < questionArr[0].length; i++) {
+    if (questionArr[0].length === 4) {
+      console.log(questionArr[0].length)
+      const btn = document.createElement('button')
+      div1.appendChild(btn)
+    }
+  }
+  return questionArr
+}
 
-const section1 = document.querySelector('.sect1')
-const section2 = document.querySelector('.sect2')
+const difficulty = localStorage.getItem('difficulty')
+switch (difficulty) {
+  case 'EASY':
+    arrayChoose = arreyOfQuestions
+    break
+  case 'MEDIUM':
+    arrayChoose = mediumArray
+    break
+  case 'HARD':
+    arrayChoose = hardArray
+}
+questionChoose(arrayChoose)
+console.log(difficulty)
+//creare bottoni
+//Fisher–Yates shuffle!!!
+function shuffle(questionArr) {
+  let currentIndex = questionArr.length
+  let randomIndex
 
+  while (currentIndex > 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+    ;[questionArr[currentIndex], questionArr[randomIndex]] = [
+      questionArr[randomIndex],
+      questionArr[currentIndex],
+    ]
+  }
+
+  return questionArr
+}
+
+let count = 60
+let counterTimerColor = 0
+//trovare bottoni
+const buttons = document.querySelectorAll(' button')
+const button1 = buttons[0]
+const button2 = buttons[1]
+const button3 = buttons[2]
+const button4 = buttons[3]
+//testo bottoni
+console.log(questionArr)
+console.log(buttons)
+
+for (let i = 0; i < questionArr[0].length; i++) {
+  console.log(buttons[i])
+  buttons[i].innerHTML = questionArr[0][i]
+}
 let totalResult = 0
-const lengthArray = questionsArray.length
-console.log(lengthArray)
-// console.log(section1.classList.item(section1.classList.length - 1));
+
+const click = function (btn, i, array, interval) {
+  for (let j = 0; j < buttons.length; j++) {
+    if (buttons[j].innerText === array[i].correct_answer) {
+      buttons[j].classList.add('correctAnswer')
+      setTimeout(() => {
+        buttons[j].classList.remove('correctAnswer')
+      }, 1500)
+    }
+  }
+  if (btn.innerText === array[i].correct_answer) {
+    totalResult++
+  }
+  if (btn.innerText !== array[i].correct_answer) {
+    btn.classList.add('selected')
+  }
+
+  setTimeout(function () {
+    btn.classList.remove('selected')
+  }, 1500)
+  if (i === numOfQuestion - 1) {
+    setTimeout(() => {
+      clearInterval(interval)
+      window.location.href = './Result.html'
+    }, 1000)
+  }
+  counterTimerColor = 0
+  setTimeout(() => {
+    count = 1
+  }, 1000)
+}
 //contatore
-const timerCounter = function () {
-  let counterTimerColor = 0
-  let count = 60
+const timerCounter = function (array) {
   let i = 0
-  //risposte esatte
-
+  h3.innerText = arrOfTitle[i]
   const interval = setInterval(function () {
-    counterTimerColor += 1.69
     count--
-    timerH2.innerHTML = count
+    setTimeout(function () {
+      timerH2.innerHTML = count
+    }, -4000)
     borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`
-
-    if (counterTimerColor === 101.39999999999992) {
+    counterTimerColor += 1.65
+    if (counterTimerColor > 100) {
       counterTimerColor = 1
     }
     button1.onclick = function () {
-      count = 1
-      if (button1.innerText === selectArray[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
-      }
-
-      button1.classList.add('selected')
-      pWrong.style.display = 'block'
-      setTimeout(() => {
-        pWrong.style.display = 'none'
-      }, 600)
-      count = 1
-      setInterval(function () {
-        button1.classList.remove('selected')
-      }, 300)
-      if (i === selectArray.length - 1) {
-        clearInterval(interval)
-        window.location.href = './Result.html'
-      }
-      counterTimerColor = 0
+      click(button1, i, array, interval)
     }
     button2.onclick = function () {
-      count = 1
-      if (button2.innerText === selectArray[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
-      }
-      button2.classList.add('selected')
-      pWrong.style.display = 'block'
-      setTimeout(() => {
-        pWrong.style.display = 'none'
-      }, 600)
-      count = 1
-      setInterval(function () {
-        button2.classList.remove('selected')
-      }, 300)
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = './Result.html'
-      }
-      counterTimerColor = 0
+      click(button2, i, array, interval)
     }
     button3.onclick = function () {
-      count = 1
-      if (button3.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
-      }
-      button3.classList.add('selected')
-      pWrong.style.display = 'block'
-      setTimeout(() => {
-        pWrong.style.display = 'none'
-      }, 600)
-      count = 1
-      setInterval(function () {
-        button3.classList.remove('selected')
-      }, 300)
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = './Result.html'
-      }
-      counterTimerColor = 0
+      click(button3, i, array, interval)
     }
     button4.onclick = function () {
-      counterTimerColor = 0
-      count = 1
-      if (button4.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-        console.log(totalResult)
+      click(button4, i, array, interval)
+    }
+    setTimeout(function () {
+      p.innerHTML = `question ${i + 1} <span> /${numOfQuestion}</span>`
+    }, -1000)
+    if (count === 0) {
+      i++
+      count = 60
+      h3.innerHTML = arrOfTitle[i]
+      if (questionArr[i].length < 3) {
+        button3.style.display = 'none'
+        button4.style.display = 'none'
+      } else if (questionArr[i].length > 2) {
+        button3.style.display = 'inline'
+        button4.style.display = 'inline'
       }
-      button4.classList.add('selected')
-      setInterval(function () {
-        button4.classList.remove('selected')
-      }, 1500)
-      if (i === arreyOfQuestions.length - 1) {
-        console.log('ciao')
-        clearInterval(interval)
-        window.location.href = './Result.html'
-      }
-
-      counterTimerColor = 0
-
-      button4.classList.add('selected')
-      pCorrect.style.display = 'block'
-      setTimeout(() => {
-        pCorrect.style.display = 'none'
-      }, 600)
-      count = 1
-      setInterval(function () {
-        button4.classList.remove('selected')
-      }, 300)
-      //risultato incrementato ad ogni click della risposta esatta
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = './Result.html'
+      for (let j = 0; j < questionArr[i].length; j++) {
+        buttons[j].innerText = questionArr[i][j]
       }
     }
 
-    // console.log(totalResult);
     //cambio domande
-    if (count === 0) {
-      const randomNumber = Math.floor(Math.random() * 3)
-      const randomNumber2 = Math.floor(Math.random() * 3)
-      i++
-      count = 60
-      h3.innerHTML = arreyOfQuestions[i].question
-      if (arreyOfQuestions[i].incorrect_answers.length >= 2) {
-        button2.classList.remove('hidden')
-        button3.classList.remove('hidden')
-        button1.innerHTML = arreyOfQuestions[i].incorrect_answers[0]
-        section1.classList.remove(
-          section1.classList.item(section1.classList.length - 1) //cambio section
-        )
-        section2.classList.remove(
-          section2.classList.item(section2.classList.length - 1) //cambio section
-        )
-
-        section1.classList.add(changeArr[randomNumber])
-        section2.classList.add(changeArr[randomNumber2])
-        button2.innerHTML = arreyOfQuestions[i].incorrect_answers[1]
-        button3.innerHTML = arreyOfQuestions[i].incorrect_answers[2]
-        button4.innerHTML = arreyOfQuestions[i].correct_answer
-
-        // console.log(i);
-        p.innerHTML = `question ${i + 1} <span>/10</span>`
-      } else {
-        button2.classList.add('hidden')
-        button3.classList.add('hidden')
-        p.innerHTML = `question ${i + 1} <span>/10</span>`
-      }
-
-      // interruzione ciclo
-      if (i === arreyOfQuestions.length - 1) {
-        const percentageResult = (totalResult / arreyOfQuestions.length) * 100
-
-        localStorage.setItem('correct', totalResult)
-        localStorage.setItem('correctPercentage', percentageResult)
-        localStorage.setItem('length', lengthArray)
-        setInterval(function () {
-          clearInterval(interval)
-          window.location.href = './Result.html'
-        }, 59500)
-      }
+    // interruzione ciclo
+    if (i === numOfQuestion - 1) {
+      const percentageResult = (totalResult / numOfQuestion) * 100
+      localStorage.setItem('correct', totalResult)
+      localStorage.setItem('correctPercentage', percentageResult.toFixed(2))
+      localStorage.setItem('length', numOfQuestion)
+      setInterval(function () {
+        clearInterval(interval)
+        window.location.href = './Result.html'
+      }, 59500)
     }
   }, 1000)
   return count
 }
-//totalResult = (totalResult / arreyOfQuestions) * 100
-window.onload = timerCounter()
-//calcolare percentuale risposte
 
-/////////////////////////////////////////////////////////////////////////////
-const rateUs = document.getElementById('rateUsContainer')
-rateUs.addEventListener('click', () => {
-  window.location.href = '../feedback.html'
-})
-
-const correctAnswers = localStorage.getItem('correctPercentage')
-console.log(correctAnswers)
-const correct = document.querySelector('#correct h3')
-correct.innerText = correctAnswers + '%'
-const wrong = document.querySelector('#wrong h3')
-wrong.innerText = 100 - correctAnswers + '%'
-const graph = document.querySelector('.percentage')
-graphPercentage = 100 - correctAnswers
-graph.style.background = `conic-gradient(rgb(210,0,148)0% ${graphPercentage}%,rgb(0,255,255)0%)`
-
-const numOfCorrectQuestions = localStorage.getItem('correct')
-const numOfQuestions = localStorage.getItem('length')
-const numOfWrongQuestions = numOfQuestions - numOfCorrectQuestions
-const correctQuestions = document.querySelector('#correct p')
-const wrongQuestions = document.querySelector('#wrong p')
-correctQuestions.innerText =
-  numOfCorrectQuestions + '/' + numOfQuestions + ' questions'
-wrongQuestions.innerText =
-  numOfWrongQuestions + '/' + numOfQuestions + ' questions'
-
-if (correctAnswers < 60) {
-  const noPassText = document.querySelector('#congratulations h1')
-  const noPassText2 = document.querySelector('#congratulations h3')
-  const noPassText3 = document.querySelector('#congratulations p')
-  noPassText.innerText = 'Exam Failed'
-  noPassText2.innerText = "You haven't passed the exam"
-  noPassText3.innerText = "We'll contact you for further instruction"
-}
+window.onload = timerCounter(arrayChoose)

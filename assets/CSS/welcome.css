@@ -33,7 +33,7 @@ main,
   margin-inline: auto;
   max-width: 60%;
 }
-section.bottom-container{
+section.bottom-container {
   max-width: 80%;
 }
 
@@ -41,7 +41,6 @@ section.bottom-container{
   text-align: left;
   width: 250px;
   padding: 2rem 0;
-  cursor: pointer;
 }
 
 h1 {
@@ -120,7 +119,7 @@ li {
   font-weight: 700;
   border: 1px solid transparent;
   font-size: 1.3rem;
-  cursor: pointer;
+  cursor: not-allowed;
   margin-top: 30px;
   margin-bottom: 4rem;
 }
@@ -128,4 +127,5 @@ li {
 .button:hover:enabled {
   background-color: #01feff;
   box-shadow: 0 0 30px #01feff;
+  cursor: pointer;
 }
