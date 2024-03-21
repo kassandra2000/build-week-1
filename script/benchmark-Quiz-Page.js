@@ -593,6 +593,7 @@ const questionChoose = function (array) {
     questionArr[i].push(array[i].correct_answer)
     //titoloriposte
     arrOfTitle.push(array[i].question)
+    shuffle(questionArr[i])
   }
   for (let i = 0; i < questionArr[0].length; i++) {
     if (questionArr[0].length === 4) {
@@ -600,8 +601,6 @@ const questionChoose = function (array) {
       const btn = document.createElement("button")
       div1.appendChild(btn)
     }
-
-    shuffle(questionArr[i])
   }
   return questionArr
 }
@@ -729,7 +728,7 @@ const timerCounter = function (array) {
 
     // interruzione ciclo
     if (i === array.length - 1) {
-      const percentageResult = (totalResult / arreyOfQuestions.length) * 100
+      const percentageResult = (totalResult / array.length) * 100
 
       localStorage.setItem("correct", totalResult)
       localStorage.setItem("correctPercentage", percentageResult)
