@@ -10,5 +10,5 @@ checkbox.addEventListener("change", function () {
 })
 
 proceedButton.onclick = function () {
-  window.location.href = "benchmark-Quiz-Page.html"
+  window.location.href = "difficulty.html"
 }

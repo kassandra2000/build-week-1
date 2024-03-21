@@ -586,6 +586,39 @@ const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //randomizzare bottoni
 const questionArr = [] //tutte le risposte
 const arrOfTitle = [] //tutte i titoli
+let arrayChoose
+const questionChoose = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    const incorrectAnswers = questionArr.push(array[i].incorrect_answers) //easy
+    questionArr[i].push(array[i].correct_answer)
+    //titoloriposte
+    arrOfTitle.push(array[i].question)
+  }
+  for (let i = 0; i < questionArr[0].length; i++) {
+    if (questionArr[0].length === 4) {
+      console.log(questionArr[0].length)
+      const btn = document.createElement("button")
+      div1.appendChild(btn)
+    }
+
+    shuffle(questionArr[i])
+  }
+  return questionArr
+}
+
+const difficulty = localStorage.getItem("difficulty")
+switch (difficulty) {
+  case "EASY":
+    arrayChoose = arreyOfQuestions
+    break
+  case "MEDIUM":
+    arrayChoose = mediumArray
+    break
+  case "HARD":
+    arrayChoose = hardArray
+}
+questionChoose(arrayChoose)
+console.log(difficulty)
 //creare bottoni
 //Fisher–Yates shuffle!!!
 function shuffle(questionArr) {
@@ -604,40 +637,6 @@ function shuffle(questionArr) {
   return questionArr
 }
 
-for (let i = 0; i < arreyOfQuestions.length; i++) {
-  const incorrectAnswers = questionArr.push(
-    arreyOfQuestions[i].incorrect_answers
-  ) //easy
-  questionArr[i].push(arreyOfQuestions[i].correct_answer)
-  //titoloriposte
-  arrOfTitle.push(arreyOfQuestions[i].question)
-  if (i > 8) {
-    for (let j = 0; j < 20; j++) {
-      questionArr.push(mediumArray[j].incorrect_answers) //medium
-      questionArr[j + 10].push(mediumArray[j].correct_answer)
-      arrOfTitle.push(mediumArray[j].question)
-      shuffle(questionArr[j + 10])
-      if (j > 18) {
-        for (let k = 0; k < 30; k++) {
-          questionArr.push(hardArray[k].incorrect_answers) //hard
-          questionArr[k + 30].push(hardArray[k].correct_answer)
-          arrOfTitle.push(hardArray[k].question)
-          shuffle(questionArr[k + 30])
-        }
-      }
-    }
-  }
-
-  if (questionArr[i].length === 4) {
-    if (i < 4) {
-      const btn = document.createElement("button")
-      div1.appendChild(btn)
-    }
-  }
-  shuffle(questionArr[i])
-}
-console.log(questionArr)
-console.log(arrOfTitle)
 let count = 60
 let counterTimerColor = 0
 //trovare bottoni
@@ -647,31 +646,35 @@ const button2 = buttons[1]
 const button3 = buttons[2]
 const button4 = buttons[3]
 //testo bottoni
+console.log(questionArr)
+console.log(buttons)
+
 for (let i = 0; i < questionArr[0].length; i++) {
+  console.log(buttons[i])
   buttons[i].innerText = questionArr[0][i]
 }
 let totalResult = 0
-const lengthArray = arreyOfQuestions.length
-const click = function (btn, i) {
+
+const click = function (btn, i, array, interval) {
   for (let j = 0; j < buttons.length; j++) {
-    if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
+    if (buttons[j].innerText === array[i].correct_answer) {
       buttons[j].classList.add("correctAnswer")
       setTimeout(() => {
         buttons[j].classList.remove("correctAnswer")
       }, 1500)
     }
   }
-  if (btn.innerText === arreyOfQuestions[i].correct_answer) {
+  if (btn.innerText === array[i].correct_answer) {
     totalResult++
   }
-  if (btn.innerText !== arreyOfQuestions[i].correct_answer) {
+  if (btn.innerText !== array[i].correct_answer) {
     btn.classList.add("selected")
   }
 
   setTimeout(function () {
     btn.classList.remove("selected")
   }, 1500)
-  if (i === arreyOfQuestions.length - 1) {
+  if (i === array.length - 1) {
     clearInterval(interval)
     window.location.href = "./Result.html"
   }
@@ -681,9 +684,10 @@ const click = function (btn, i) {
   }, 1000)
 }
 //contatore
-const timerCounter = function () {
+const timerCounter = function (array) {
   let i = 0
-
+  h3.innerText = arrOfTitle[i]
+  const lengthArray = array.length
   const interval = setInterval(function () {
     counterTimerColor += 1.69
     count--
@@ -694,18 +698,18 @@ const timerCounter = function () {
       counterTimerColor = 1
     }
     button1.onclick = function () {
-      click(button1, i)
+      click(button1, i, array, interval)
     }
     button2.onclick = function () {
-      click(button2, i)
+      click(button2, i, array, interval)
     }
     button3.onclick = function () {
-      click(button3, i)
+      click(button3, i, array, interval)
     }
     button4.onclick = function () {
-      click(button4, i)
+      click(button4, i, array, interval)
     }
-
+    p.innerHTML = `question ${i + 1} <span> /${lengthArray}</span>`
     //cambio domande
     if (count === 0) {
       i++
@@ -721,24 +725,22 @@ const timerCounter = function () {
       for (let j = 0; j < questionArr[i].length; j++) {
         buttons[j].innerText = questionArr[i][j]
       }
-
-      p.innerHTML = `question ${i + 1} <span>/10</span>`
     }
 
     // interruzione ciclo
-    if (i === arreyOfQuestions.length - 1) {
+    if (i === array.length - 1) {
       const percentageResult = (totalResult / arreyOfQuestions.length) * 100
 
       localStorage.setItem("correct", totalResult)
       localStorage.setItem("correctPercentage", percentageResult)
       localStorage.setItem("length", lengthArray)
-      // setInterval(function () {
-      //   clearInterval(interval);
-      //   window.location.href = "./Result.html";
-      // }, 59500);
+      setInterval(function () {
+        clearInterval(interval)
+        window.location.href = "./Result.html"
+      }, 59500)
     }
-    // }
   }, 1000)
   return count
 }
-window.onload = timerCounter()
+
+window.onload = timerCounter(arrayChoose)
