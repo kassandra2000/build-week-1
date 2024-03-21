@@ -688,12 +688,13 @@ const timerCounter = function (array) {
   h3.innerText = arrOfTitle[i]
   const lengthArray = array.length
   const interval = setInterval(function () {
-    counterTimerColor += 1.69
     count--
-    timerH2.innerHTML = count
+    setTimeout(function () {
+      timerH2.innerHTML = count
+    }, -4000)
     borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`
-
-    if (counterTimerColor === 101.39999999999992) {
+    counterTimerColor += 1.65
+    if (counterTimerColor > 100) {
       counterTimerColor = 1
     }
     button1.onclick = function () {
@@ -708,8 +709,9 @@ const timerCounter = function (array) {
     button4.onclick = function () {
       click(button4, i, array, interval)
     }
-    p.innerHTML = `question ${i + 1} <span> /${lengthArray}</span>`
-    //cambio domande
+    setTimeout(function () {
+      p.innerHTML = `question ${i + 1} <span> /${lengthArray}</span>`
+    }, -1000)
     if (count === 0) {
       i++
       count = 60
@@ -725,6 +727,8 @@ const timerCounter = function (array) {
         buttons[j].innerText = questionArr[i][j]
       }
     }
+
+    //cambio domande
 
     // interruzione ciclo
     if (i === array.length - 1) {
