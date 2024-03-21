@@ -580,8 +580,7 @@ const p = document.querySelector("footer p")
 const borderTimer = document.querySelector(".border-timer")
 const pCorrect = document.querySelector(".correct")
 const pWrong = document.querySelector(".wrong")
-const section1 = document.querySelector(".sect1")
-const section2 = document.querySelector(".sect2")
+const div1 = document.querySelector(".viv1")
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //randomizzare bottoni
@@ -630,39 +629,59 @@ for (let i = 0; i < arreyOfQuestions.length; i++) {
   }
 
   if (questionArr[i].length === 4) {
-    if (i < 2) {
+    if (i < 4) {
       const btn = document.createElement("button")
-      section1.appendChild(btn)
-    } else if (i < 4) {
-      const btn = document.createElement("button")
-      section2.appendChild(btn)
+      div1.appendChild(btn)
     }
   }
   shuffle(questionArr[i])
 }
 console.log(questionArr)
 console.log(arrOfTitle)
+let count = 60
+let counterTimerColor = 0
 //trovare bottoni
-const buttons = document.querySelectorAll(".button button")
+const buttons = document.querySelectorAll(" button")
 const button1 = buttons[0]
-button1.classList.add("btn1")
 const button2 = buttons[1]
-button2.classList.add("btn2")
 const button3 = buttons[2]
-button3.classList.add("btn3")
 const button4 = buttons[3]
-button4.classList.add("btn4")
 //testo bottoni
 for (let i = 0; i < questionArr[0].length; i++) {
   buttons[i].innerText = questionArr[0][i]
 }
 let totalResult = 0
 const lengthArray = arreyOfQuestions.length
+const click = function (btn, i) {
+  for (let j = 0; j < buttons.length; j++) {
+    if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
+      buttons[j].classList.add("correctAnswer")
+      setTimeout(() => {
+        buttons[j].classList.remove("correctAnswer")
+      }, 1500)
+    }
+  }
+  if (btn.innerText === arreyOfQuestions[i].correct_answer) {
+    totalResult++
+  }
+  if (btn.innerText !== arreyOfQuestions[i].correct_answer) {
+    btn.classList.add("selected")
+  }
 
+  setTimeout(function () {
+    btn.classList.remove("selected")
+  }, 1500)
+  if (i === arreyOfQuestions.length - 1) {
+    clearInterval(interval)
+    window.location.href = "./Result.html"
+  }
+  counterTimerColor = 0
+  setTimeout(() => {
+    count = 1
+  }, 1000)
+}
 //contatore
 const timerCounter = function () {
-  let counterTimerColor = 0
-  let count = 5
   let i = 0
 
   const interval = setInterval(function () {
@@ -675,131 +694,29 @@ const timerCounter = function () {
       counterTimerColor = 1
     }
     button1.onclick = function () {
-      for (let j = 0; j < buttons.length; j++) {
-        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
-          buttons[j].classList.add("correctAnswer")
-          setTimeout(() => {
-            buttons[j].classList.remove("correctAnswer")
-          }, 1500)
-        }
-      }
-      if (button1.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-      }
-      if (button1.innerText !== arreyOfQuestions[i].correct_answer) {
-        button1.classList.add("selected")
-      }
-
-      setTimeout(function () {
-        button1.classList.remove("selected")
-      }, 1500)
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
-      }
-      counterTimerColor = 0
-      setTimeout(() => {
-        count = 1
-      }, 1000)
+      click(button1, i)
     }
     button2.onclick = function () {
-      for (let j = 0; j < buttons.length; j++) {
-        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
-          buttons[j].classList.add("correctAnswer")
-          setTimeout(() => {
-            buttons[j].classList.remove("correctAnswer")
-          }, 1500)
-        }
-      }
-
-      if (button2.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-      }
-      if (button2.innerText !== arreyOfQuestions[i].correct_answer) {
-        button2.classList.add("selected")
-      }
-      setTimeout(function () {
-        button2.classList.remove("selected")
-      }, 1500)
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
-      }
-      counterTimerColor = 0
-      setTimeout(() => {
-        count = 1
-      }, 1000)
+      click(button2, i)
     }
     button3.onclick = function () {
-      for (let j = 0; j < buttons.length; j++) {
-        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
-          buttons[j].classList.add("correctAnswer")
-          setTimeout(() => {
-            buttons[j].classList.remove("correctAnswer")
-          }, 1500)
-        }
-      }
-
-      if (button3.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-      }
-      if (button3.innerText !== arreyOfQuestions[i].correct_answer) {
-        button3.classList.add("selected")
-      }
-
-      setTimeout(function () {
-        button3.classList.remove("selected")
-      }, 1500)
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
-      }
-      counterTimerColor = 0
-      setTimeout(() => {
-        count = 1
-      }, 1000)
+      click(button3, i)
     }
     button4.onclick = function () {
-      for (let j = 0; j < buttons.length; j++) {
-        if (buttons[j].innerText === arreyOfQuestions[i].correct_answer) {
-          buttons[j].classList.add("correctAnswer")
-          setTimeout(() => {
-            buttons[j].classList.remove("correctAnswer")
-          }, 1500)
-        }
-      }
-
-      if (button4.innerText === arreyOfQuestions[i].correct_answer) {
-        totalResult++
-      }
-      if (button4.innerText !== arreyOfQuestions[i].correct_answer) {
-        button4.classList.add("selected")
-      }
-      setTimeout(function () {
-        button4.classList.remove("selected")
-      }, 1500)
-      if (i === arreyOfQuestions.length - 1) {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
-      }
-      counterTimerColor = 0
-      setTimeout(() => {
-        count = 1
-      }, 1000)
-      //risultato incrementato ad ogni click della risposta esatta
+      click(button4, i)
     }
 
     //cambio domande
     if (count === 0) {
       i++
-      count = 3
+      count = 60
       h3.innerHTML = arrOfTitle[i]
       if (questionArr[i].length < 3) {
         button3.style.display = "none"
         button4.style.display = "none"
       } else if (questionArr[i].length > 2) {
-        button3.style.display = "block"
-        button4.style.display = "block"
+        button3.style.display = "inline"
+        button4.style.display = "inline"
       }
       for (let j = 0; j < questionArr[i].length; j++) {
         buttons[j].innerText = questionArr[i][j]
