@@ -945,7 +945,7 @@ console.log(buttons)
 
 for (let i = 0; i < questionArr[0].length; i++) {
   console.log(buttons[i])
-  buttons[i].innerText = questionArr[0][i]
+  buttons[i].innerHTML = questionArr[0][i]
 }
 let totalResult = 0
 
@@ -1025,11 +1025,9 @@ const timerCounter = function (array) {
     }
 
     //cambio domande
-
     // interruzione ciclo
     if (i === numOfQuestion - 1) {
       const percentageResult = (totalResult / numOfQuestion) * 100
-
       localStorage.setItem("correct", totalResult)
       localStorage.setItem("correctPercentage", percentageResult.toFixed(2))
       localStorage.setItem("length", numOfQuestion)

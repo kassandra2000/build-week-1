@@ -4,11 +4,11 @@ rateUs.addEventListener("click", () => {
 })
 
 const correctAnswers = localStorage.getItem("correctPercentage")
-console.log(correctAnswers)
 const correct = document.querySelector("#correct h3")
 correct.innerText = correctAnswers + "%"
 const wrong = document.querySelector("#wrong h3")
 wrong.innerText = 100 - correctAnswers + "%"
+
 const graph = document.querySelector(".percentage")
 graphPercentage = 100 - correctAnswers
 graph.style.background = `conic-gradient(rgb(210,0,148)0% ${graphPercentage}%,rgb(0,255,255)0%)`
