@@ -291,7 +291,7 @@ const arreyOfQuestions = [
       "Ludicrous Turbo Speed",
     ],
   },
-]
+];
 
 const mediumArray = [
   {
@@ -579,7 +579,7 @@ const mediumArray = [
     correct_answer: "Motorola 68000",
     incorrect_answers: ["Zilog Z80", "Yamaha YM2612", "Intel 8088"],
   },
-]
+];
 
 const hardArray = [
   {
@@ -865,179 +865,179 @@ const hardArray = [
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
-]
+];
 
 //prendere html
-const timerH2 = document.querySelector(" h2")
-const h3 = document.querySelector(" .h3 h3")
-const p = document.querySelector("footer p")
-const borderTimer = document.querySelector(".border-timer")
-const pCorrect = document.querySelector(".correct")
-const pWrong = document.querySelector(".wrong")
-const div1 = document.querySelector(".viv1")
+const timerH2 = document.querySelector(" h2");
+const h3 = document.querySelector(" .h3 h3");
+const p = document.querySelector("footer p");
+const borderTimer = document.querySelector(".border-timer");
+const pCorrect = document.querySelector(".correct");
+const pWrong = document.querySelector(".wrong");
+const div1 = document.querySelector(".viv1");
 //punteggio risposte corette
-const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //randomizzare bottoni
-const questionArr = [] //tutte le risposte
-const arrOfTitle = [] //tutte i titoli
-let arrayChoose
-const numOfQuestion = localStorage.getItem("numOfQuestions")
+const questionArr = []; //tutte le risposte
+const arrOfTitle = []; //tutte i titoli
+let arrayChoose;
+const numOfQuestion = localStorage.getItem("numOfQuestions");
 const questionChoose = function (array) {
   for (let i = 0; i < numOfQuestion; i++) {
-    const incorrectAnswers = questionArr.push(array[i].incorrect_answers) //easy
-    questionArr[i].push(array[i].correct_answer)
+    const incorrectAnswers = questionArr.push(array[i].incorrect_answers); //easy
+    questionArr[i].push(array[i].correct_answer);
     //titoloriposte
-    arrOfTitle.push(array[i].question)
-    shuffle(questionArr[i])
+    arrOfTitle.push(array[i].question);
+    shuffle(questionArr[i]);
   }
   for (let i = 0; i < questionArr[0].length; i++) {
     if (questionArr[0].length === 4) {
-      console.log(questionArr[0].length)
-      const btn = document.createElement("button")
-      div1.appendChild(btn)
+      console.log(questionArr[0].length);
+      const btn = document.createElement("button");
+      div1.appendChild(btn);
     }
   }
-  return questionArr
-}
+  return questionArr;
+};
 
-const difficulty = localStorage.getItem("difficulty")
+const difficulty = localStorage.getItem("difficulty");
 switch (difficulty) {
   case "EASY":
-    arrayChoose = arreyOfQuestions
-    break
+    arrayChoose = arreyOfQuestions;
+    break;
   case "MEDIUM":
-    arrayChoose = mediumArray
-    break
+    arrayChoose = mediumArray;
+    break;
   case "HARD":
-    arrayChoose = hardArray
+    arrayChoose = hardArray;
 }
-questionChoose(arrayChoose)
-console.log(difficulty)
+questionChoose(arrayChoose);
+console.log(difficulty);
 //creare bottoni
 //Fisher–Yates shuffle!!!
 function shuffle(questionArr) {
-  let currentIndex = questionArr.length
-  let randomIndex
+  let currentIndex = questionArr.length;
+  let randomIndex;
 
   while (currentIndex > 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex)
-    currentIndex--
-    ;[questionArr[currentIndex], questionArr[randomIndex]] = [
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [questionArr[currentIndex], questionArr[randomIndex]] = [
       questionArr[randomIndex],
       questionArr[currentIndex],
-    ]
+    ];
   }
 
-  return questionArr
+  return questionArr;
 }
 
-let count = 60
-let counterTimerColor = 0
+let count = 60;
+let counterTimerColor = 0;
 //trovare bottoni
-const buttons = document.querySelectorAll(" button")
-const button1 = buttons[0]
-const button2 = buttons[1]
-const button3 = buttons[2]
-const button4 = buttons[3]
+const buttons = document.querySelectorAll(" button");
+const button1 = buttons[0];
+const button2 = buttons[1];
+const button3 = buttons[2];
+const button4 = buttons[3];
 //testo bottoni
-console.log(questionArr)
-console.log(buttons)
+console.log(questionArr);
+console.log(buttons);
 
 for (let i = 0; i < questionArr[0].length; i++) {
-  console.log(buttons[i])
-  buttons[i].innerHTML = questionArr[0][i]
+  console.log(buttons[i]);
+  buttons[i].innerHTML = questionArr[0][i];
 }
-let totalResult = 0
+let totalResult = 0;
 
 const click = function (btn, i, array, interval) {
   for (let j = 0; j < buttons.length; j++) {
     if (buttons[j].innerText === array[i].correct_answer) {
-      buttons[j].classList.add("correctAnswer")
+      buttons[j].classList.add("correctAnswer");
       setTimeout(() => {
-        buttons[j].classList.remove("correctAnswer")
-      }, 1500)
+        buttons[j].classList.remove("correctAnswer");
+      }, 1500);
     }
   }
   if (btn.innerText === array[i].correct_answer) {
-    totalResult++
+    totalResult++;
   }
   if (btn.innerText !== array[i].correct_answer) {
-    btn.classList.add("selected")
+    btn.classList.add("selected");
   }
 
   setTimeout(function () {
-    btn.classList.remove("selected")
-  }, 1500)
+    btn.classList.remove("selected");
+  }, 1500);
   if (i === numOfQuestion - 1) {
     setTimeout(() => {
-      clearInterval(interval)
-      window.location.href = "./Result.html"
-    }, 1000)
+      clearInterval(interval);
+      window.location.href = "./Result.html";
+    }, 1000);
   }
-  counterTimerColor = 0
+  counterTimerColor = 0;
   setTimeout(() => {
-    count = 1
-  }, 1000)
-}
+    count = 1;
+  }, 1000);
+};
 //contatore
 const timerCounter = function (array) {
-  let i = 0
-  h3.innerText = arrOfTitle[i]
+  let i = 0;
+  h3.innerText = arrOfTitle[i];
   const interval = setInterval(function () {
-    count--
+    count--;
     setTimeout(function () {
-      timerH2.innerHTML = count
-    }, -4000)
-    borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`
-    counterTimerColor += 1.65
+      timerH2.innerHTML = count;
+    }, -4000);
+    borderTimer.style.background = `conic-gradient(rgba(255, 255, 255, 0.13) 0% ${counterTimerColor}%,rgb(139, 228, 255) 0%)`;
+    counterTimerColor += 1.65;
     if (counterTimerColor > 100) {
-      counterTimerColor = 1
+      counterTimerColor = 1;
     }
     button1.onclick = function () {
-      click(button1, i, array, interval)
-    }
+      click(button1, i, array, interval);
+    };
     button2.onclick = function () {
-      click(button2, i, array, interval)
-    }
+      click(button2, i, array, interval);
+    };
     button3.onclick = function () {
-      click(button3, i, array, interval)
-    }
+      click(button3, i, array, interval);
+    };
     button4.onclick = function () {
-      click(button4, i, array, interval)
-    }
+      click(button4, i, array, interval);
+    };
     setTimeout(function () {
-      p.innerHTML = `question ${i + 1} <span> /${numOfQuestion}</span>`
-    }, -1000)
+      p.innerHTML = `question ${i + 1} <span> /${numOfQuestion}</span>`;
+    }, -1000);
     if (count === 0) {
-      i++
-      count = 60
-      h3.innerHTML = arrOfTitle[i]
+      i++;
+      count = 60;
+      h3.innerHTML = arrOfTitle[i];
       if (questionArr[i].length < 3) {
-        button3.style.display = "none"
-        button4.style.display = "none"
+        button3.style.display = "none";
+        button4.style.display = "none";
       } else if (questionArr[i].length > 2) {
-        button3.style.display = "inline"
-        button4.style.display = "inline"
+        button3.style.display = "inline";
+        button4.style.display = "inline";
       }
       for (let j = 0; j < questionArr[i].length; j++) {
-        buttons[j].innerText = questionArr[i][j]
+        buttons[j].innerText = questionArr[i][j];
       }
     }
 
     //cambio domande
     // interruzione ciclo
     if (i === numOfQuestion - 1) {
-      const percentageResult = (totalResult / numOfQuestion) * 100
-      localStorage.setItem("correct", totalResult)
-      localStorage.setItem("correctPercentage", percentageResult.toFixed(2))
-      localStorage.setItem("length", numOfQuestion)
+      const percentageResult = (totalResult / numOfQuestion) * 100;
+      localStorage.setItem("correct", totalResult);
+      localStorage.setItem("correctPercentage", percentageResult.toFixed(2));
+      localStorage.setItem("length", numOfQuestion);
       setInterval(function () {
-        clearInterval(interval)
-        window.location.href = "./Result.html"
-      }, 59500)
+        clearInterval(interval);
+        window.location.href = "./Result.html";
+      }, 59500);
     }
-  }, 1000)
-  return count
-}
+  }, 1000);
+  return count;
+};
 
-window.onload = timerCounter(arrayChoose)
+window.onload = timerCounter(arrayChoose);
