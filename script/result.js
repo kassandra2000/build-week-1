@@ -14,7 +14,7 @@ graphPercentage = 100 - correctAnswers
 graph.style.background = `conic-gradient(rgb(210,0,148)0% ${graphPercentage}%,rgb(0,255,255)0%)`
 
 const numOfCorrectQuestions = localStorage.getItem("correct")
-const numOfQuestions = localStorage.getItem("length")
+const numOfQuestions = localStorage.getItem("numOfQuestions")
 const numOfWrongQuestions = numOfQuestions - numOfCorrectQuestions
 const correctQuestions = document.querySelector("#correct p")
 const wrongQuestions = document.querySelector("#wrong p")

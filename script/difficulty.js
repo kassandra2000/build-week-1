@@ -12,6 +12,7 @@ function addSelectedClass(button) {
   button.classList.add("selected")
 }
 
+localStorage.setItem("numOfQuestions", 3)
 easyButton.addEventListener("click", function () {
   addSelectedClass(easyButton)
   const difficulty = easyButton.innerText
