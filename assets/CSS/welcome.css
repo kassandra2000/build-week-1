@@ -127,4 +127,5 @@ li {
 .button:hover:enabled {
   background-color: #01feff;
   box-shadow: 0 0 30px #01feff;
+  cursor: pointer;
 }
