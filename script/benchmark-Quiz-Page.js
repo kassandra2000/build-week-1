@@ -877,21 +877,6 @@ const pWrong = document.querySelector('.wrong')
 const div1 = document.querySelector('.viv1')
 //punteggio risposte corette
 const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-/////////attempt at difficulty selection
-const selectArray = function (difficulty) {
-  if (difficulty === 'easy') {
-    return arreyOfQuestions
-  } else if (difficulty === 'medium') {
-    return mediumArray
-  } else if (difficulty === 'hard') {
-    return hardArray
-  }
-}
-const selectedDifficulty = 'medium'
-const questionsArray = selectArray(selectedDifficulty)
-console.log(selectArray(selectedDifficulty))
-
 //randomizzare bottoni
 const questionArr = [] //tutte le risposte
 const arrOfTitle = [] //tutte i titoli
@@ -993,6 +978,10 @@ const click = function (btn, i, array, interval) {
   setTimeout(() => {
     count = 1
   }, 1000)
+  btn.disabled = true
+  setTimeout(function () {
+    btn.disabled = false
+  }, 2000)
 }
 //contatore
 const timerCounter = function (array) {
@@ -1035,7 +1024,7 @@ const timerCounter = function (array) {
         button4.style.display = 'inline'
       }
       for (let j = 0; j < questionArr[i].length; j++) {
-        buttons[j].innerText = questionArr[i][j]
+        buttons[j].innerHTML = questionArr[i][j]
       }
     }
 

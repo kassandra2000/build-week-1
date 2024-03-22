@@ -3,13 +3,17 @@
 
 body {
   background-image: url(../image/bg.jpg);
-  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
+main {
+  height: 140vh;
+}
 #container {
   width: 80%;
-  height: 100vh;
+  height: 140vh;
   margin-inline: auto;
 }
 #logoContainer {
@@ -101,23 +105,33 @@ body {
   font-weight: 100;
 }
 
-#rateUsContainer {
+#rateUsContainer,
+.rateUsContainer {
   width: 20%;
-  margin-inline: auto;
+  margin-inline: 20px;
   padding: 1%;
   border: 2px white solid;
   color: white;
-  margin-bottom: 25%;
-  margin-top: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13%;
   position: relative;
   bottom: -150px;
   cursor: pointer;
 }
 
-#rateUsContainer p {
+#rateUsContainer p,
+.rateUsContainer p {
   text-align: center;
   font-family: "Outfit", sans-serif;
   font-size: 2em;
+}
+
+#rateUsContainer:hover,
+.rateUsContainer:hover {
+  background-color: #01feff;
+  box-shadow: 0 0 30px #01feff;
 }
 
 .percentage {
@@ -142,5 +156,10 @@ body {
   align-items: center;
   border-radius: 50%;
   color: white;
+}
+
+.align-Button {
+  display: flex;
+  justify-content: center;
 }
 /*ciao*/
