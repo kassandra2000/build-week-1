@@ -1,5 +1,14 @@
-body{
-    font-family: "Inter", sans-serif;  
+body {
+  font-family: "Inter", sans-serif;
+}
+#logoContainer {
+  width: 90%;
+  margin-left: 5%;
+}
+#logoContainer img {
+  text-align: left;
+  width: 250px;
+  padding: 2rem 0;
 }
 main h1 {
   color: white;
@@ -10,7 +19,7 @@ main h1 {
 }
 main div {
   color: white;
-  font-size: 1.4em;
+  font-size: 1.0em;
   border: 1px solid white;
   margin: 20px 0;
   padding: 20px;
@@ -23,11 +32,11 @@ main p .wrong {
   left: 15vw;
   top: -1vh;
   text-shadow: 1px 1px 4px red;
-  font-family: "Inter", sans-serif;  
+  font-family: "Inter", sans-serif;
 }
 
 main p .true {
-    font-family: "Inter", sans-serif;  
+  font-family: "Inter", sans-serif;
   position: relative;
   left: 15vw;
 
@@ -35,23 +44,51 @@ main p .true {
   margin-right: 80px;
 }
 .margin {
-    font-family: "Inter", sans-serif; 
+  font-family: "Inter", sans-serif;
   margin-top: 20px;
-  color: rgb(182, 11, 153);
+
   font-weight: 600;
- 
+  color: rgb(68, 241, 253);
   -webkit-text-stroke-width: 1px;
- 
+}
+
+.margin2 {
+  font-family: "Inter", sans-serif;
+
+  font-weight: 600;
+  color: rgb(68, 241, 253);
+  -webkit-text-stroke-width: 1px;
 }
 p {
-  color: rgb(255, 255, 255);
+  color: rgb(197, 0, 171);
   
 }
-.font{
-    font-family: "Inter", sans-serif; 
+.font {
+  font-family: "Inter", sans-serif;
 }
-div h3{
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    max-width: 70vw;
+div h3 {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  max-width: 70vw;
+}
+
+.correct {
+  color: rgb(68, 241, 253);
+}
+.button:hover{
+  background-color: #01feff;
+  box-shadow: 0 0 30px #01feff;
+  cursor: pointer;
+}
+.button {
+  padding: 1rem 3rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  font-size: 1.3rem;
+  cursor: not-allowed;
+  margin-top: 30px;
+  margin-bottom: 4rem;
+}
+.proceed{
+  text-align: center;
 }
