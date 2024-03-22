@@ -881,7 +881,7 @@ const numerOfquestionP = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const questionArr = [] //tutte le risposte
 const arrOfTitle = [] //tutte i titoli
 const rightQuestions = []
-const wrongQuestions = []
+export const wrongQuestions = []
 const yourCorrectAnswers = []
 const yourWrongAnswers = []
 const allCorrectAnswers = []
@@ -1042,18 +1042,18 @@ const timerCounter = function (array) {
     //cambio domande
     // interruzione ciclo
     if (i === numOfQuestion - 1) {
-      console.log(wrongAnswers)
+      console.log(wrongQuestions)
       console.log(yourCorrectAnswers)
       console.log(yourWrongAnswers)
       const percentageResult = (totalResult / numOfQuestion) * 100
       localStorage.setItem("correct", totalResult)
       localStorage.setItem("correctPercentage", percentageResult.toFixed(2))
       localStorage.setItem("length", numOfQuestion)
-      localStorage.setItem("correctQuestions", rightQuestions)
-      localStorage.setItem("wrongQuestions", wrongQuestions)
-      localStorage.setItem("yourCorrectAnswers", yourCorrectAnswers)
-      localStorage.setItem("yourWrongAnswers", yourWrongAnswers)
-      localStorage.setItem("allCorrectAnswers", allCorrectAnswers)
+      sessionStorage.setItem("correctQuestions", rightQuestions)
+      sessionStorage.setItem("wrongQuestions", wrongQuestions)
+      sessionStorage.setItem("yourCorrectAnswers", yourCorrectAnswers)
+      sessionStorage.setItem("yourWrongAnswers", yourWrongAnswers)
+      sessionStorage.setItem("allCorrectAnswers", allCorrectAnswers)
       setInterval(function () {
         clearInterval(interval)
         window.location.href = "./Result.html"
