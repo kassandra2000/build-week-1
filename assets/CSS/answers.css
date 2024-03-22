@@ -14,12 +14,14 @@ main h1 {
   color: white;
   font-size: 4em;
   text-align: center;
-  margin: 40px 0;
+  margin-bottom: 70px;
+  
   font-family: "Outfit", sans-serif;
+  font-weight: bold;
 }
 main div {
   color: white;
-  font-size: 1.0em;
+  font-size: 1em;
   border: 1px solid white;
   margin: 20px 0;
   padding: 20px;
@@ -61,7 +63,6 @@ main p .true {
 }
 p {
   color: rgb(197, 0, 171);
-  
 }
 .font {
   font-family: "Inter", sans-serif;
@@ -75,9 +76,8 @@ div h3 {
 .correct {
   color: rgb(68, 241, 253);
 }
-.button:hover{
-  background-color: #01feff;
-  box-shadow: 0 0 30px #01feff;
+.button:hover {
+  background-color: #efeeef45;
   cursor: pointer;
 }
 .button {
@@ -88,7 +88,10 @@ div h3 {
   cursor: not-allowed;
   margin-top: 30px;
   margin-bottom: 4rem;
+  border: 2px solid #efeeef;
+  background-color: transparent;
+  color: #efeeef;
 }
-.proceed{
+.proceed {
   text-align: center;
 }

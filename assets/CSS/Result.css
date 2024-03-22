@@ -119,6 +119,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 9%;
+  margin-bottom: 200px;
   position: relative;
   bottom: -150px;
   cursor: pointer;
