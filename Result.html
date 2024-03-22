@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Result</title>
-  </head>
-  <link rel="stylesheet" href="assets/CSS/reset.css" />
-  <link rel="stylesheet" href="/assets/CSS/Result.css" />
-  <body>
-    <div id="container">
-      <header>
-        <div id="logoContainer">
-          <img src="assets/image/epicode_logo.png" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Result</title>
+</head>
+<link rel="stylesheet" href="assets/CSS/reset.css" />
+<link rel="stylesheet" href="/assets/CSS/Result.css" />
+
+<body>
+  <header>
+    <div id="logoContainer">
+      <img src="assets/image/epicode_logo.png" />
+    </div>
+  </header>
+  <div id="container">
+    <main>
+      <div id="resultsTitle">
+        <h1>Results</h1>
+        <h3>The summary of your answers:</h3>
+      </div>
+      <div class="correctWrongContainer">
+        <div id="correct">
+          <h1>Correct</h1>
+          <h3>66.7%</h3>
+          <p>4/6 questions</p>
         </div>
-      </header>
-      <main>
-        <div id="resultsTitle">
-          <h1>Results</h1>
-          <h3>The summary of your answers:</h3>
-        </div>
-        <div class="correctWrongContainer">
-          <div id="correct">
-            <h1>Correct</h1>
-            <h3>66.7%</h3>
-            <p>4/6 questions</p>
-          </div>
-        </div>
-        <div class="correctWrongContainer">
-          <div class="percentage">
-            <div class="percentageMessage">
-              <div id="congratulations">
-                <h1>Congratulations!</h1>
-                <h3>You have passed the exam.</h3>
-                <p>We'll send you the certificate in few minutes.</p>
-                <p>Check your email(including promotions / spam folder)</p>
-              </div>
+      </div>
+      <div class="correctWrongContainer">
+        <div class="percentage">
+          <div class="percentageMessage">
+            <div id="congratulations">
+              <h1>Congratulations!</h1>
+              <h3>You have passed the exam.</h3>
+              <p>We'll send you the certificate in few minutes.</p>
+              <p>Check your email(including promotions / spam folder)</p>
             </div>
           </div>
         </div>
-        <div class="correctWrongContainer">
-          <div id="wrong">
-            <h1>Wrong</h1>
-            <h3>33.3%</h3>
-            <p>2/6 questions</p>
-          </div>
+      </div>
+      <div class="correctWrongContainer">
+        <div id="wrong">
+          <h1>Wrong</h1>
+          <h3>33.3%</h3>
+          <p>2/6 questions</p>
         </div>
-        <div class="align-Button">
-          <div class="rateUsContainer">
-            <p>ANSWERS</p>
-          </div>
-          <div id="rateUsContainer">
-            <p>RATE US</p>
-          </div>
+      </div>
+      <div class="align-Button">
+        <div class="rateUsContainer">
+          <p>ANSWERS</p>
         </div>
-      </main>
-    </div>
-    <script src="/script/result.js"></script>
-  </body>
+        <div id="rateUsContainer">
+          <p>RATE US</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/script/result.js"></script>
+</body>
+
 </html>
