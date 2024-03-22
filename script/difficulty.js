@@ -33,19 +33,19 @@ function addSelectedClass2(button) {
 
 easyButton.addEventListener("click", function () {
   addSelectedClass(easyButton)
-  difficulty = easyButton.innerText
+  difficulty = "EASY"
   localStorage.setItem("difficulty", difficulty)
   changePage()
 })
 mediumButton.addEventListener("click", function () {
   addSelectedClass(mediumButton)
-  difficulty = mediumButton.innerText
+  difficulty = "MEDIUM"
   localStorage.setItem("difficulty", difficulty)
   changePage()
 })
 hardButton.addEventListener("click", function () {
   addSelectedClass(hardButton)
-  difficulty = hardButton.innerText
+  difficulty = "HARD"
   localStorage.setItem("difficulty", difficulty)
   changePage()
 })
