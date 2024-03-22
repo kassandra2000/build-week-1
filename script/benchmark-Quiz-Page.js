@@ -1042,9 +1042,7 @@ const timerCounter = function (array) {
     //cambio domande
     // interruzione ciclo
     if (i === numOfQuestion - 1) {
-      console.log(wrongQuestions)
-      console.log(yourCorrectAnswers)
-      console.log(yourWrongAnswers)
+    
       const percentageResult = (totalResult / numOfQuestion) * 100
       localStorage.setItem("correct", totalResult)
       localStorage.setItem("correctPercentage", percentageResult.toFixed(2))
