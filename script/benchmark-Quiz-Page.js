@@ -978,6 +978,10 @@ const click = function (btn, i, array, interval) {
   setTimeout(() => {
     count = 1;
   }, 1000);
+  btn.disabled = true;
+  setTimeout(function () {
+    btn.disabled = false;
+  },2000)
 };
 //contatore
 const timerCounter = function (array) {
