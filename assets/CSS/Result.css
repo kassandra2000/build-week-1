@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
 
 body {
   background-image: url(../image/bg.jpg);
@@ -9,24 +9,28 @@ body {
   background-attachment: fixed;
 }
 main {
-  height: 140vh;
+  min-height: 100vh;
 }
 #container {
   width: 80%;
-  height: 140vh;
+  height: 100vh;
   margin-inline: auto;
 }
 #logoContainer {
-  margin: 5% 0 0 0;
+  width: 90%;
+  margin-left: 5%;
 }
 #logoContainer img {
-  width: 20%;
+  text-align: left;
+  width: 250px;
+  padding: 2rem 0;
 }
 
 #resultsTitle {
   text-align: center;
   color: white;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 1rem;
 }
 #resultsTitle h1 {
   font-size: 4em;
@@ -45,18 +49,18 @@ main {
 
 #correct h1 {
   font-size: 3.5em;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   margin-top: 2%;
 }
 #correct h3 {
   font-size: 3.5em;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   margin-top: 2%;
 }
 
 #correct p {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   margin-top: 2%;
   font-weight: 100;
 }
@@ -67,18 +71,18 @@ main {
 #congratulations h1 {
   font-size: 1.5em;
   margin-bottom: 2%;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
 }
 #congratulations h3 {
   font-size: 1em;
   color: #00ffff;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   margin-bottom: 10%;
 }
 #congratulations p {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9em;
   font-weight: 300;
   color: lightgray;
@@ -90,17 +94,17 @@ main {
 }
 #wrong h1 {
   font-size: 3.5em;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   margin-top: 2%;
 }
 #wrong h3 {
   font-size: 3.5em;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   margin-top: 2%;
 }
 #wrong p {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   margin-top: 2%;
   font-weight: 100;
 }
@@ -110,28 +114,39 @@ main {
   width: 20%;
   margin-inline: 20px;
   padding: 1%;
-  border: 2px white solid;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 13%;
+  margin-top: 9%;
   position: relative;
   bottom: -150px;
   cursor: pointer;
+  border: 1px solid transparent;
+  color: black;
+  background-color: #efeeef;
+}
+
+#rateUsContainer {
+  border: 2px solid #efeeef;
+  background-color: transparent;
+  color: #efeeef;
 }
 
 #rateUsContainer p,
 .rateUsContainer p {
   text-align: center;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 2em;
 }
 
-#rateUsContainer:hover,
 .rateUsContainer:hover {
   background-color: #01feff;
   box-shadow: 0 0 30px #01feff;
+}
+
+#rateUsContainer:hover {
+  background-color: #efeeef45;
 }
 
 .percentage {
