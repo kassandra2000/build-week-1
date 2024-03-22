@@ -1020,7 +1020,7 @@ const timerCounter = function (array) {
         button4.style.display = "inline";
       }
       for (let j = 0; j < questionArr[i].length; j++) {
-        buttons[j].innerText = questionArr[i][j];
+        buttons[j].innerHTML = questionArr[i][j];
       }
     }
 
